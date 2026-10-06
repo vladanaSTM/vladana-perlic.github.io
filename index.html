@@ -3,22 +3,23 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Vladana Perlić is an Industrial PhD researcher in Generative AI and NLP, and a poet and writer working between English, Serbian, and French.">
-    <title>Vladana Perlić | AI, Poetry, Popular Science</title>
+    <meta name="description" content="Vladana Perlić is an Industrial PhD candidate in Generative AI and NLP and an award-winning poet writing in Serbian.">
+    <title>Vladana Perlić — AI Researcher &amp; Poet</title>
+    <link rel="canonical" href="https://vladana-perlic.github.io/">
+    <link rel="icon" href="data/site/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="data/site/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="data/site/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vladana-perlic.github.io/">
+    <meta property="og:title" content="Vladana Perlić — AI Researcher &amp; Poet">
+    <meta property="og:description" content="Industrial PhD candidate in Generative AI and NLP. Award-winning poet writing in Serbian, translated into eight languages.">
+    <meta property="og:image" content="https://vladana-perlic.github.io/data/site/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Vladana Perlić, AI researcher and poet">
+    <meta name="twitter:card" content="summary_large_image">
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
     <script src="https://unpkg.com/mammoth/mammoth.browser.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
-    <script>
-        window.MathJax = {
-            tex: {
-                displayMath: [["\\[", "\\]"]]
-            },
-            options: {
-                skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"]
-            }
-        };
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
     <style>
         :root {
             --paper: #e7dac0;
@@ -305,6 +306,8 @@
         }
 
         .contact-actions,
+        .cv-actions,
+        .bio-actions,
         .card-actions {
             display: flex;
             flex-wrap: wrap;
@@ -473,6 +476,18 @@
             color: var(--soft-ink);
         }
 
+        .bio-text p {
+            margin: 0 0 0.75rem;
+        }
+
+        .bio-actions {
+            margin-top: 0.4rem;
+        }
+
+        .bio-actions .small-note {
+            margin: 0;
+        }
+
         .archive-label,
         .tag {
             display: inline-flex;
@@ -504,10 +519,6 @@
         .tag.poetry,
         .tag.press {
             color: var(--red);
-        }
-
-        .tag.public-science {
-            color: var(--gold);
         }
 
         .tag.translation {
@@ -1172,6 +1183,17 @@
             margin-bottom: 0;
         }
 
+        .poem-image {
+            margin: 0;
+        }
+
+        .poem-image img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
         .poem-text em,
         .poem-text i {
             font-style: italic;
@@ -1181,453 +1203,111 @@
             margin-top: 0.9rem;
         }
 
-        .science-layout {
-            display: grid;
-            grid-template-columns: minmax(18rem, 0.52fr) minmax(0, 1.48fr);
-            gap: 1.25rem;
-            align-items: start;
-            min-width: 0;
+        @keyframes record-spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
 
-        .science-stack {
-            display: grid;
-            gap: 1rem;
-            min-width: 0;
-        }
-
-        .science-card.is-selected {
-            border-color: rgba(166, 109, 45, 0.78);
-            background: rgba(255, 252, 241, 0.98);
-            box-shadow: 0 18px 40px rgba(38, 25, 16, 0.14);
-        }
-
-        .manuscript-rumor {
-            position: relative;
-            display: grid;
-            place-items: center;
-            isolation: isolate;
-            justify-self: end;
-            width: min(11.8rem, 78%);
-            aspect-ratio: 1;
-            margin: 2.15rem 2.25rem 0.2rem 0;
-            padding: 1.08rem;
-            border: 1px solid rgba(105, 61, 27, 0.58);
-            border-radius: 50%;
-            background:
-                radial-gradient(circle at 32% 24%, rgba(255, 255, 255, 0.95) 0 0.78rem, rgba(255, 255, 255, 0.38) 0.84rem 1.55rem, transparent 1.6rem),
-                radial-gradient(circle at 46% 42%, #fff5c7 0 38%, #f7ca76 58%, #c98334 78%, #7b421d 100%);
-            box-shadow:
-                inset 0 0 0 0.34rem rgba(255, 248, 219, 0.58),
-                inset 0 0.34rem 0.52rem rgba(255, 255, 255, 0.52),
-                inset 0 -0.85rem 1.35rem rgba(82, 43, 18, 0.34),
-                inset -0.42rem -0.38rem 0.8rem rgba(89, 47, 19, 0.22),
-                0 0.28rem 0 rgba(115, 63, 26, 0.38),
-                0 1.15rem 1.9rem rgba(83, 57, 22, 0.24);
-            color: #5b3519;
-            font-size: 0.82rem;
-            font-weight: 700;
-            line-height: 1.26;
-            text-align: center;
-            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.46);
-            text-wrap: balance;
-            transform-origin: center;
-            animation: magnet-wobble 5.4s ease-in-out infinite;
-        }
-
-        .manuscript-rumor::before {
-            content: "";
-            position: absolute;
-            inset: 0.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.34);
-            border-radius: 50%;
-            background:
-                radial-gradient(ellipse at 34% 20%, rgba(255, 255, 255, 0.5) 0 12%, transparent 13% 36%),
-                linear-gradient(145deg, rgba(255, 255, 255, 0.24), transparent 42%, rgba(92, 46, 18, 0.14) 78%);
-            box-shadow:
-                inset 0 0 0 1px rgba(120, 72, 33, 0.2),
-                inset 0 -0.4rem 0.8rem rgba(111, 61, 25, 0.12);
-            pointer-events: none;
-        }
-
-        .manuscript-rumor::after {
-            content: "";
-            position: absolute;
-            left: 14%;
-            right: 10%;
-            bottom: -0.58rem;
-            z-index: -1;
-            height: 1.15rem;
-            border-radius: 50%;
-            background: rgba(75, 45, 18, 0.22);
-            filter: blur(7px);
-            transform: rotate(8deg);
-            pointer-events: none;
-        }
-
-        .science-reader {
-            position: sticky;
-            top: 6rem;
+        .poem-reader-actions {
             display: flex;
-            flex-direction: column;
-            min-width: 0;
-            max-width: 100%;
-            padding: 1.1rem;
-            border: 1px solid var(--rule-strong);
-            border-radius: 6px;
-            background:
-                repeating-linear-gradient(0deg, transparent 0 31px, rgba(72, 51, 32, 0.08) 32px, transparent 33px),
-                rgba(255, 252, 241, 0.94);
-            box-shadow: 0 18px 48px rgba(38, 25, 16, 0.12);
-        }
-
-        .science-reader h3 {
-            margin-bottom: 0.2rem;
-            font-size: 1.55rem;
-        }
-
-        .science-reader-meta {
-            margin-bottom: 0.9rem;
-            color: var(--faint);
-            font-size: 0.88rem;
-            font-weight: 700;
-        }
-
-        .science-text {
-            flex: 1 1 auto;
-            min-width: 0;
-            max-width: 100%;
-            overflow: auto;
-            max-height: min(74vh, 62rem);
-            padding: clamp(1.1rem, 2.1vw, 2rem);
-            border: 1px dashed var(--rule-strong);
-            border-radius: 4px;
-            background: rgba(255, 245, 223, 0.62);
-            color: var(--ink);
-            font-size: 1.04rem;
-            line-height: 1.82;
-        }
-
-        .science-text h1,
-        .science-text h2,
-        .science-text h3 {
-            max-width: none;
-            margin: 1.4rem 0 0.7rem;
-            color: var(--ink);
-            line-height: 1.22;
-            word-break: normal;
-        }
-
-        .science-text h1:first-child,
-        .science-text h2:first-child,
-        .science-text h3:first-child {
-            margin-top: 0;
-        }
-
-        .science-text h1 {
-            font-size: 1.45rem;
-        }
-
-        .science-text h2,
-        .science-text h3 {
-            font-size: 1.18rem;
-        }
-
-        .science-text p {
-            margin: 0 0 1rem;
-        }
-
-        .science-text p:last-child {
-            margin-bottom: 0;
-        }
-
-        .science-text a {
-            font-weight: 700;
-        }
-
-        .science-reader.is-latex-mode {
-            background:
-                linear-gradient(90deg, rgba(142, 52, 45, 0.07), transparent 18%, transparent 82%, rgba(52, 77, 102, 0.06)),
-                repeating-linear-gradient(0deg, transparent 0 31px, rgba(72, 51, 32, 0.07) 32px, transparent 33px),
-                rgba(255, 252, 241, 0.96);
-        }
-
-        .science-text.is-latex-reader {
-            background: #fffaf0;
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 1.08rem;
-            line-height: 1.78;
-            overflow-wrap: break-word;
-        }
-
-        .latex-manuscript {
-            width: min(47rem, 100%);
-            min-width: 0;
-            max-width: 100%;
-            margin: 0 auto;
-        }
-
-        .latex-title-page {
-            min-height: 18rem;
-            display: grid;
-            align-content: center;
-            gap: 0.85rem;
-            margin-bottom: 2rem;
-            padding: clamp(1.2rem, 4vw, 3rem) 0;
-            border-bottom: 1px solid var(--rule-strong);
-            text-align: center;
-        }
-
-        .latex-title-page span,
-        .latex-chapter-kicker,
-        .latex-bibliography h4 {
-            color: var(--gold);
-            font-family: var(--type);
-            font-size: 0.78rem;
-            font-weight: 700;
-            letter-spacing: 0;
-            text-transform: uppercase;
-        }
-
-        .latex-title-page h4,
-        .latex-chapter-title {
-            margin: 0;
-            color: var(--ink);
-            font-family: Georgia, "Times New Roman", serif;
-            font-weight: 700;
-            line-height: 1.14;
-        }
-
-        .latex-title-page h4 {
-            font-size: 2.05rem;
-        }
-
-        .latex-title-page p {
-            max-width: 34rem;
-            margin: 0 auto;
-            color: var(--soft-ink);
-            font-size: 1.08rem;
-            text-indent: 0;
-        }
-
-        .latex-toc {
-            min-width: 0;
-            max-width: 100%;
-            margin: 0 0 2.25rem;
-            padding: 1rem 1.05rem;
-            border: 1px solid rgba(166, 109, 45, 0.36);
-            border-radius: 6px;
-            background: rgba(255, 245, 223, 0.6);
-        }
-
-        .latex-toc strong {
-            display: block;
-            margin-bottom: 0.65rem;
-            color: var(--red);
-            font-family: var(--type);
-            font-size: 0.82rem;
-            text-transform: uppercase;
-        }
-
-        .latex-toc ol,
-        .latex-bibliography-list {
-            display: grid;
-            gap: 0.55rem;
-            margin: 0;
-            padding: 0;
-        }
-
-        .latex-toc ol {
-            padding-left: 1.25rem;
-        }
-
-        .latex-toc a,
-        .latex-title-page h4,
-        .latex-chapter-title,
-        .latex-bibliography-list li {
-            overflow-wrap: anywhere;
-        }
-
-        .latex-chapter {
-            min-width: 0;
-            max-width: 100%;
-            padding-top: 2.4rem;
-            border-top: 1px dashed var(--rule-strong);
-        }
-
-        .latex-chapter:first-of-type {
-            border-top: 0;
-        }
-
-        .latex-chapter + .latex-chapter {
-            margin-top: 2.4rem;
-        }
-
-        .latex-chapter-title {
-            margin-bottom: 1.25rem;
-            font-size: 1.55rem;
-        }
-
-        .science-text.is-latex-reader p {
-            margin-bottom: 0.78rem;
-            text-indent: 1.15em;
-        }
-
-        .science-text.is-latex-reader p:first-of-type,
-        .latex-title-page p,
-        .latex-quote p,
-        .latex-bibliography p {
-            text-indent: 0;
-        }
-
-        .latex-quote {
-            margin: 1.25rem 0 1.35rem;
-            padding: 0.95rem 1rem 0.85rem;
-            border-left: 0.24rem solid rgba(142, 52, 45, 0.62);
-            background: rgba(255, 245, 223, 0.68);
-            color: var(--soft-ink);
-        }
-
-        .latex-quote p:last-child {
-            margin-bottom: 0;
-        }
-
-        .latex-quote p:not(.latex-quote-attribution) {
-            font-style: italic;
-        }
-
-        .latex-quote-attribution {
-            color: var(--faint);
-            font-family: var(--type);
-            font-size: 0.86rem;
-            font-weight: 700;
-        }
-
-        .latex-citation {
-            color: var(--blue);
-            font-family: var(--type);
-            font-size: 0.82em;
-            overflow-wrap: anywhere;
-        }
-
-        .latex-equation {
-            width: 100%;
-            min-width: 0;
-            max-width: 100%;
-            overflow-x: auto;
-            overflow-y: hidden;
-            margin: 1.25rem 0;
-            padding: 0.85rem;
-            border: 1px dashed var(--rule-strong);
-            border-radius: 4px;
-            background: rgba(255, 252, 241, 0.86);
-        }
-
-        .latex-equation mjx-container {
-            max-width: 100%;
-            overflow-x: auto;
-            overflow-y: hidden;
-        }
-
-        .latex-bibliography {
-            min-width: 0;
-            max-width: 100%;
-            margin-top: 3rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--rule-strong);
-        }
-
-        .latex-bibliography h4 {
-            margin: 0 0 1rem;
-            font-size: 1rem;
-        }
-
-        .latex-bibliography-list {
-            list-style: none;
-        }
-
-        .latex-bibliography-list li {
-            padding-left: 0.8rem;
-            border-left: 0.18rem solid rgba(52, 77, 102, 0.38);
-            color: var(--soft-ink);
-            font-size: 0.94rem;
-            line-height: 1.55;
-        }
-
-        .science-reader-actions {
-            margin-top: 0.9rem;
-        }
-
-        .publisher-callout {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) auto;
-            gap: 1rem;
+            flex-wrap: wrap;
+            gap: 0.65rem;
             align-items: center;
-            margin: -0.35rem 0 1.35rem;
-            padding: 1rem;
-            border: 1px solid rgba(142, 52, 45, 0.58);
-            border-radius: 6px;
-            background: rgba(255, 236, 218, 0.78);
-            box-shadow: 0 14px 34px rgba(142, 52, 45, 0.13);
-            animation: publisherial-pulse 3.8s ease-in-out infinite;
         }
 
-        .publisher-callout span {
-            display: block;
-            margin-bottom: 0.15rem;
-            color: var(--red);
-            font-size: 0.78rem;
-            font-weight: 700;
-            text-transform: uppercase;
+        .poem-reader.is-expanded {
+            position: fixed;
+            inset: 1rem;
+            z-index: 70;
+            width: auto;
+            max-width: none;
+            max-height: calc(100vh - 2rem);
+            overflow: auto;
+            transform: none;
         }
 
-        .publisher-callout strong {
-            display: block;
-            color: var(--red);
-            font-size: clamp(1.25rem, 2.5vw, 2rem);
-            line-height: 1.12;
+        .poem-reader.is-expanded .poem-text {
+            max-height: none;
         }
 
-        .publisher-callout p {
-            margin: 0.3rem 0 0;
-            color: var(--soft-ink);
+        body.reader-expanded {
+            overflow: hidden;
         }
 
-        .floating-manuscript-cta {
+        body.reader-expanded .page-shell::after {
+            display: none;
+        }
+
+        .beta-cta {
             position: fixed;
             right: max(1rem, calc((100vw - 1360px) / 2));
             bottom: 1.1rem;
             z-index: 80;
             width: min(19rem, calc(100vw - 2rem));
-            padding: 0;
             border: 1px solid var(--red);
             border-radius: 6px;
             background: rgba(142, 52, 45, 0.96);
             color: var(--page);
             box-shadow: 0 18px 48px rgba(38, 25, 16, 0.28);
             overflow: hidden;
-            animation: manuscript-float 4.2s ease-in-out infinite;
+            transition: transform 0.2s ease;
         }
 
-        .floating-manuscript-cta:hover,
-        .floating-manuscript-cta:focus-within {
-            color: var(--page);
+        .beta-cta[hidden],
+        body.reader-expanded .beta-cta {
+            display: none;
+        }
+
+        .beta-cta:not([hidden]) {
+            animation: beta-cta-in 0.4s ease;
+        }
+
+        @keyframes beta-cta-in {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+        }
+
+        .beta-cta:hover,
+        .beta-cta:focus-within {
             transform: translateY(-3px);
         }
 
-        .floating-manuscript-cta-link {
+        .beta-cta-link {
             display: block;
             padding: 0.8rem 2.55rem 0.8rem 0.9rem;
             color: inherit;
             text-decoration: none;
         }
 
-        .floating-manuscript-cta-link:hover,
-        .floating-manuscript-cta-link:focus-visible {
+        .beta-cta-link:hover,
+        .beta-cta-link:focus-visible {
             color: var(--page);
             text-decoration: none;
         }
 
-        .floating-manuscript-cta-close {
+        .beta-cta span {
+            display: block;
+            color: rgba(255, 245, 223, 0.74);
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .beta-cta strong {
+            display: block;
+            margin-top: 0.12rem;
+            font-size: 0.94rem;
+            line-height: 1.28;
+        }
+
+        .beta-cta-close {
             position: absolute;
             top: 0.38rem;
             right: 0.38rem;
@@ -1641,119 +1321,22 @@
             background: rgba(36, 25, 21, 0.16);
             color: var(--page);
             cursor: pointer;
-            transition: background 0.2s ease, transform 0.2s ease;
         }
 
-        .floating-manuscript-cta-close:hover,
-        .floating-manuscript-cta-close:focus-visible {
+        .beta-cta-close:hover,
+        .beta-cta-close:focus-visible {
             background: rgba(255, 245, 223, 0.2);
-            transform: translateY(-1px);
         }
 
-        .floating-manuscript-cta-close:focus-visible {
+        .beta-cta-close:focus-visible {
             outline: 2px solid rgba(255, 245, 223, 0.78);
             outline-offset: 2px;
         }
 
-        .floating-manuscript-cta-close svg {
+        .beta-cta-close svg {
             width: 1rem;
             height: 1rem;
             stroke-width: 2.5;
-        }
-
-        .floating-manuscript-cta span {
-            display: block;
-            color: rgba(255, 245, 223, 0.74);
-            font-size: 0.72rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .floating-manuscript-cta strong {
-            display: block;
-            margin-top: 0.12rem;
-            font-size: 0.94rem;
-            line-height: 1.28;
-        }
-
-        @keyframes publisherial-pulse {
-            0%,
-            100% {
-                box-shadow: 0 14px 34px rgba(142, 52, 45, 0.13);
-            }
-
-            50% {
-                box-shadow: 0 18px 44px rgba(142, 52, 45, 0.24);
-            }
-        }
-
-        @keyframes manuscript-float {
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-7px);
-            }
-        }
-
-        @keyframes magnet-wobble {
-            0%,
-            100% {
-                transform: rotate(-7deg) translateY(0);
-            }
-
-            50% {
-                transform: rotate(-3.5deg) translateY(-5px);
-            }
-        }
-
-        @keyframes record-spin {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        .poem-reader-actions,
-        .science-reader-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.65rem;
-            align-items: center;
-        }
-
-        .poem-reader.is-expanded,
-        .science-reader.is-expanded {
-            position: fixed;
-            inset: 1rem;
-            z-index: 70;
-            width: auto;
-            max-width: none;
-            max-height: calc(100vh - 2rem);
-            overflow: auto;
-            transform: none;
-        }
-
-        .poem-reader.is-expanded .poem-text,
-        .science-reader.is-expanded .science-text {
-            max-height: none;
-        }
-
-        body.reader-expanded {
-            overflow: hidden;
-        }
-
-        body.reader-expanded .floating-manuscript-cta {
-            display: none;
-        }
-
-        body.reader-expanded .page-shell::after {
-            display: none;
         }
 
         .prize-card {
@@ -1805,6 +1388,236 @@
 
         .press-grid {
             grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+        }
+
+        .news-article {
+            display: grid;
+            grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        .news-media {
+            display: grid;
+            gap: 0.9rem;
+        }
+
+        .news-media figure {
+            margin: 0;
+        }
+
+        .news-media img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border: 1px solid var(--rule-strong);
+            border-radius: 4px;
+        }
+
+        .news-media figcaption,
+        .news-meta {
+            color: var(--faint);
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+
+        .news-media figcaption {
+            margin-top: 0.4rem;
+        }
+
+        .news-body h3 {
+            margin-bottom: 0.4rem;
+            font-size: 1.45rem;
+        }
+
+        .news-meta {
+            margin-bottom: 0.9rem;
+        }
+
+        .news-more {
+            margin-top: 1rem;
+        }
+
+        #in-the-news,
+        #poem-reader {
+            scroll-margin-top: 6rem;
+        }
+
+        .press-photo-card {
+            display: grid;
+            grid-template-columns: 8rem minmax(0, 1fr);
+            gap: 1rem;
+            align-items: center;
+            max-width: 34rem;
+            min-height: auto;
+            margin-top: 1rem;
+        }
+
+        .press-photo-card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border: 1px solid var(--rule-strong);
+            border-radius: 4px;
+        }
+
+        .press-photo-card p {
+            margin: 0;
+        }
+
+        .press-photo-card .card-actions {
+            padding-top: 0.6rem;
+        }
+
+        .residency-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.5rem;
+            margin-top: 0.4rem;
+        }
+
+        .residency-gallery img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            border: 1px solid var(--rule-strong);
+            border-radius: 4px;
+        }
+
+        .residency-caption {
+            margin: 0.45rem 0 0;
+            color: var(--faint);
+            font-size: 0.78rem;
+        }
+
+        .card-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.5rem;
+            margin-top: 0.4rem;
+        }
+
+        .card-gallery img {
+            aspect-ratio: 1;
+        }
+
+        .card-gallery.wide img {
+            aspect-ratio: 3 / 2;
+        }
+
+        .card-gallery img.object-right {
+            object-position: right;
+        }
+
+        .card-gallery img,
+        .card-photo img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border: 1px solid var(--rule-strong);
+            border-radius: 4px;
+        }
+
+        .card-photo {
+            display: block;
+            margin: 0.2rem 0 0.8rem;
+        }
+
+        .award-photos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+            gap: 1rem;
+            max-width: 56rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .award-photo {
+            margin: 0;
+        }
+
+        .award-photo img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border: 1px solid var(--rule-strong);
+            border-radius: 4px;
+            box-shadow: 0 16px 40px rgba(38, 25, 16, 0.1);
+        }
+
+        .award-photo figcaption {
+            margin-top: 0.45rem;
+            color: var(--faint);
+            font-size: 0.8rem;
+        }
+
+        .journal-cover {
+            display: block;
+            width: 7rem;
+            height: auto;
+            margin: 0.2rem 0 0.7rem;
+            border: 1px solid var(--rule-strong);
+            border-radius: 4px;
+        }
+
+        [data-lightbox] {
+            cursor: zoom-in;
+        }
+
+        .lightbox {
+            max-width: 94vw;
+            max-height: 94vh;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            overflow: visible;
+        }
+
+        .lightbox::backdrop {
+            background: rgba(20, 12, 10, 0.84);
+        }
+
+        .lightbox img {
+            display: block;
+            max-width: min(94vw, 1200px);
+            max-height: 86vh;
+            width: auto;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+            cursor: zoom-out;
+        }
+
+        .lightbox-caption {
+            margin: 0.55rem 0 0;
+            color: var(--page);
+            font-size: 0.86rem;
+            text-align: center;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            display: grid;
+            width: 2.2rem;
+            height: 2.2rem;
+            padding: 0;
+            place-items: center;
+            border: 1px solid rgba(255, 245, 223, 0.6);
+            border-radius: 50%;
+            background: rgba(142, 52, 45, 0.92);
+            color: var(--page);
+            cursor: pointer;
+        }
+
+        .lightbox-close svg {
+            width: 1.1rem;
+            height: 1.1rem;
         }
 
         .press-stack {
@@ -1920,17 +1733,15 @@
             .marginal-layout,
             .book-grid,
             .writing-extra,
-            .publisher-callout,
             .awarded-poem-layout,
-            .science-layout,
             .press-grid,
+            .news-article,
             .contact-panel {
                 grid-template-columns: 1fr;
             }
 
             .marginalia,
-            .poem-reader,
-            .science-reader {
+            .poem-reader {
                 position: static;
                 transform: none;
                 width: 100%;
@@ -1941,8 +1752,7 @@
                 transform: rotate(2deg);
             }
 
-            .poem-reader.is-expanded,
-            .science-reader.is-expanded {
+            .poem-reader.is-expanded {
                 position: fixed;
                 inset: 0.75rem;
             }
@@ -2001,59 +1811,11 @@
                 width: 100%;
             }
 
-            .floating-manuscript-cta {
+            .beta-cta {
                 right: 0.75rem;
                 bottom: 0.75rem;
                 left: 0.75rem;
                 width: auto;
-            }
-
-            .science-reader {
-                padding: 0.75rem;
-            }
-
-            .science-reader h3 {
-                font-size: 1.25rem;
-                overflow-wrap: anywhere;
-            }
-
-            .science-text {
-                padding: 0.85rem;
-                font-size: 0.98rem;
-            }
-
-            .science-text.is-latex-reader {
-                font-size: 1rem;
-                line-height: 1.72;
-            }
-
-            .latex-title-page {
-                min-height: auto;
-                padding: 1.4rem 0;
-            }
-
-            .latex-title-page h4 {
-                font-size: 1.6rem;
-            }
-
-            .latex-title-page p {
-                font-size: 0.98rem;
-            }
-
-            .latex-toc {
-                padding: 0.85rem;
-            }
-
-            .latex-toc ol {
-                padding-left: 1rem;
-            }
-
-            .latex-chapter-title {
-                font-size: 1.3rem;
-            }
-
-            .latex-equation {
-                padding: 0.65rem;
             }
 
             .timeline li {
@@ -2076,12 +1838,12 @@
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <aside class="floating-manuscript-cta" data-floating-manuscript-cta aria-label="Popular science manuscript announcement">
-        <a class="floating-manuscript-cta-link" href="#popular-science" aria-label="Check out Vladana Perlić's new popular science manuscript on AI misconceptions">
-            <span>New pop-sci manuscript</span>
-            <strong>Psst! Hey, you! Yes, you! 🫵 Come meet the future Taylor Swift of explaining why you shouldn't put a chatbot in charge of your mortgage. And hurry before the tickets get expensive!</strong>
+    <aside class="beta-cta" data-beta-cta aria-label="Beta readers wanted" hidden>
+        <a class="beta-cta-link" href="#beta-readers">
+            <span>Beta readers wanted</span>
+            <strong>Want to read my newest, unpublished work before anyone else? I'll translate it for you.</strong>
         </a>
-        <button class="floating-manuscript-cta-close" type="button" data-floating-manuscript-close aria-label="Close manuscript announcement">
+        <button class="beta-cta-close" type="button" data-beta-cta-close aria-label="Close beta readers invitation">
             <i data-lucide="x" aria-hidden="true"></i>
         </button>
     </aside>
@@ -2091,14 +1853,16 @@
             <nav class="nav" aria-label="Main navigation">
                 <a class="brand" href="#top" aria-label="Vladana Perlić home">
                     <span>Vladana Perlić</span>
-                    <span>AI research / poetry / popular science</span>
+                    <span>AI research / poetry</span>
                 </a>
                 <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#news">News</a></li>
                     <li><a href="#research">Research</a></li>
                     <li><a href="#literary-works">Literary works</a></li>
                     <li><a href="#press">Press</a></li>
-                    <li><a href="#popular-science">Popular science</a></li>
+                    <li><a href="#beta-readers">Beta readers</a></li>
+                    <li><a href="#bio">Author bio</a></li>
+                    <li><a href="#cvs">CVs</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -2107,7 +1871,7 @@
         <main id="main">
             <section class="section hero" id="top" aria-labelledby="hero-title">
                 <div class="alps-banner" aria-label="Line-art mountain banner">
-                    <img src="data/alps-banner.png?v=3" alt="" aria-hidden="true" loading="eager">
+                    <img src="data/site/alps-banner.png?v=3" alt="" aria-hidden="true" loading="eager">
                 </div>
 
                 <div class="section-inner hero-grid">
@@ -2115,13 +1879,13 @@
                         <p class="eyebrow">Grenoble / Paris / Banja Luka</p>
                         <h1 id="hero-title">Vladana Perlić</h1>
                         <p class="location-line">Based in Grenoble, France.</p>
-                        <p class="lede">Industrial PhD student in Generative AI and NLP. Poet, writer, and literary translator. I research, write, translate, publish, collect prizes, and make jokes precisely when adults would advise against it. This site gathers the receipts: AI papers, books, awarded poems, translations, interviews, and a new popular-science manuscript on AI misconceptions.</p>
+                        <p class="lede">Industrial PhD candidate in Generative AI and NLP. Poet, writer, and literary translator. I research, write, translate, publish, collect prizes, and make jokes precisely when adults would advise against it. This site gathers the receipts: AI papers, books, awarded poems, translations, and interviews.</p>
                     </div>
 
                     <div class="portrait-slip" aria-label="Portrait">
                         <figure>
-                            <img src="data/profile_photo.jpg" alt="Portrait of Vladana Perlić" loading="eager">
-                            <figcaption>PhD candidate in AI / poet / seriously unserious / still smarter than AI</figcaption>
+                            <img src="data/site/profile-photo.jpg" alt="Portrait of Vladana Perlić" loading="eager">
+                            <figcaption>Industrial PhD candidate in AI / poet / seriously unserious / still smarter than AI</figcaption>
                         </figure>
                     </div>
                 </div>
@@ -2132,17 +1896,57 @@
                     <div>
                         <p class="eyebrow">About</p>
                         <h2 id="about-title">I write poems and study machines that need to lay off the shrooms</h2>
-                        <p class="section-copy">I am an Industrial PhD student at STMicroelectronics and Télécom Paris, working on LLMs, retrieval-augmented generation, agentic workflows, and multimodal technical documentation. In less CV-shaped terms: I study how AI systems find information, assemble answers, improvise when they should not, and sound frighteningly calm while doing it.</p>
-                        <p class="section-copy">I also write poetry, prose, essays, and popular science articles. The overlap is less strange than it sounds: I spend a lot of time asking what a sentence is doing, what it is leaving out, and whether there is evidence behind the confidence.</p>
+                        <p class="section-copy">I am an Industrial PhD candidate at STMicroelectronics and Télécom Paris, working on LLMs, retrieval-augmented generation, agentic workflows, and multimodal technical documentation. In less CV-shaped terms: I study how AI systems find information, assemble answers, improvise when they should not, and sound frighteningly calm while doing it.</p>
+                        <p class="section-copy">I also write poetry, prose, and essays. The overlap is less strange than it sounds: I spend a lot of time asking what a sentence is doing, what it is leaving out, and whether there is evidence behind the confidence.</p>
                         <p class="section-copy">(The awards and publications are listed below, just in case you need proof that the jokes come with academic follow-through.)</p>
                         <p class="section-copy">Outside of work, my hobbies include skateboarding, snowboarding, surfing, and anything that might result in a serious brain injury.
                         </p>
-                        <p class="section-copy">The rest of my worldview can be triangulated from my personal heroes: Nikola Tesla, <a href="https://www.instagram.com/reel/DXGwfopEd0S/?igsh=MWh2dm1vaHBrYmIyMA==">that Chinese lady who surfskates in heels</a>, and Shrek.</p>
+                        <p class="section-copy">The rest of my worldview can be triangulated from my personal heroes: Nikola Tesla, <a href="https://www.instagram.com/reel/DXGwfopEd0S/?igsh=MWh2dm1vaHBrYmIyMA==" target="_blank" rel="noopener noreferrer">that Chinese lady who surfskates in heels</a>, and Shrek.</p>
                     </div>
                     <aside class="marginalia" aria-live="polite">
                         <span>Location</span>
                         <p id="margin-note-text">Based in Grenoble, France, with work and collaborations across Paris, Banja Luka, and Belgrade.</p>
                     </aside>
+                </div>
+            </section>
+
+            <section class="section" id="news" aria-labelledby="news-title">
+                <div class="section-inner">
+                    <div class="section-heading simple-heading">
+                        <div>
+                            <p class="eyebrow">News</p>
+                            <h2 id="news-title">Latest from the poetry desk.</h2>
+                        </div>
+                    </div>
+
+                    <article class="note-card news-article" data-note="Ten poems in Ukrainian translation, presented at the Lviv BookForum in September 2026." data-stamp="lviv">
+                        <div class="news-media">
+                            <figure>
+                                <img src="data/images/publications/sunce-u-vodi-cover.jpg" alt="Cover of the anthology Сонце у воді (Sun in the Water): a painted sunset over still water with boats" loading="lazy" data-lightbox tabindex="0" role="button">
+                                <figcaption>Cover of <em>Сонце у воді</em> (Piramida, Lviv).</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="data/images/photos/2026-lviv-bookforum.jpg" alt="Panel discussion in front of a projection screen during the anthology presentation in Lviv" loading="lazy" data-lightbox tabindex="0" role="button">
+                                <figcaption>From the presentation at the Pivden Cultural Hub, Lviv.</figcaption>
+                            </figure>
+                        </div>
+                        <div class="news-body">
+                            <span class="tag translation">Anthology / Ukrainian translation</span>
+                            <h3>Vladana Perlić’s poems appear in Ukrainian in <em>Sun in the Water</em></h3>
+                            <p class="news-meta">September 2026 / Lviv, Ukraine</p>
+                            <p>Ten poems by Vladana Perlić have been published in Ukrainian translation in <em>Sun in the Water</em> («Сонце у воді»), a new anthology of contemporary Croatian and Bosnian-Herzegovinian poetry from the Lviv publisher Piramida. Selected and edited by the Croatian writer Siniša Matasović, the book brings together fifteen poets, each represented by ten poems.</p>
+                            <p>The anthology was presented on 13 September 2026 at the Pivden Cultural Hub (Культурний хаб Південь) as part of the <a href="https://bookforum.ua/en/" target="_blank" rel="noopener noreferrer">Lviv BookForum</a>, one of Ukraine’s leading literary and publishing festivals. Under the title <em>Poetic Voices of Croatia</em>, translator Alla Tatarenko and editor Siniša Matasović introduced the book to Ukrainian audiences with a presentation and poetry reading. During the festival (11–13 September), the anthology was also presented at the <a href="https://lnu.edu.ua/en/" target="_blank" rel="noopener noreferrer">Ivan Franko National University of Lviv</a>, founded in 1661.</p>
+                            <p>The poems were translated by Alla Tatarenko, Mariana Komarytsia, and Maria Shun, with the foreword translated by Anna Komarytsia. With this publication, Ukrainian joins the languages Vladana’s poetry has been translated into, alongside English, French, German, Italian, Polish, Hungarian, and Hindi.</p>
+                            <p class="small-note">Also in the anthology: Krešimir Bagić, Tomica Bajsić, Boris Domagoj Biletić, Tomislav Marijan Bilosnić, Lana Derkač, Sanja Domenuš, Ivan Herceg, Žarko Jovanovski, Senka Marić, Siniša Matasović, Semezdin Mehmedinović, Melida Travančić, Darija Žilić, and Joso Živković.</p>
+                            <div class="card-actions">
+                                <a class="button" href="https://photos.app.goo.gl/Se3B5BPmPU4864vs9" target="_blank" rel="noopener noreferrer"><i data-lucide="play" aria-hidden="true"></i>Watch the presentation</a>
+                                <a class="button" href="https://program.bookforum.ua/" target="_blank" rel="noopener noreferrer"><i data-lucide="calendar" aria-hidden="true"></i>BookForum programme</a>
+                            </div>
+                        </div>
+                    </article>
+                    <div class="news-more">
+                        <a class="button" href="#in-the-news" data-open-panel><i data-lucide="archive" aria-hidden="true"></i>Older news</a>
+                    </div>
                 </div>
             </section>
 
@@ -2199,6 +2003,7 @@
                                 <span class="tag poetry">Book</span>
                                 <h3><em>Kucanje na vrata kule</em></h3>
                                 <p><em>Knocking on the Tower Door</em>, Zaprokul, Belgrade, 2020. Winner of the “Novica Tadić” Award.</p>
+                                <a class="card-photo" href="data/images/books/kucanje-na-vrata-kule.jpg" data-lightbox><img src="data/images/books/kucanje-na-vrata-kule.jpg" alt="The orange-and-white cover of Kucanje na vrata kule held up beside a river, framed by wild grasses" width="875" height="656" loading="lazy"></a>
                                 <div class="card-actions" aria-label="Kucanje na vrata kule links">
                                     <a class="button" href="https://zaprokul.org.rs/wp-content/uploads/2024/06/Vladana-Perlic-Kucanje-na-vrata-kule-final.pdf" target="_blank" rel="noopener noreferrer"><i data-lucide="download" aria-hidden="true"></i>Free PDF</a>
                                     <a class="button" href="https://zaprokul.org.rs/vladana-perlic-kucanje-na-vrata-kule-2020/" target="_blank" rel="noopener noreferrer"><i data-lucide="external-link" aria-hidden="true"></i>Zaprokul</a>
@@ -2209,6 +2014,12 @@
                                 <span class="tag poetry">Book</span>
                                 <h3><em>Isus među dojkama</em></h3>
                                 <p><em>Jesus Among Breasts</em>, LOM, Belgrade, 2020.</p>
+                                <p>Presented on 30 June 2021 at KC Grad, Belgrade, in the “Booking” programme, in conversation with Radmila Petrović, Zvonko Karanović, and Maša Tomanović.</p>
+                                <div class="card-gallery wide">
+                                    <a href="data/images/books/isus-medju-dojkama-cover.jpg" data-lightbox><img class="object-right" src="data/images/books/isus-medju-dojkama-cover.jpg" alt="Full cover of Isus među dojkama (LOM, 2020): author bio and photo, back-cover text by Marko Tomaš, and Milena Ivić's painting of breasts dripping blood-red milk on a black background" width="1187" height="656" loading="lazy"></a>
+                                    <a href="data/images/photos/2021-kc-grad-reading.jpg" data-lightbox><img src="data/images/photos/2021-kc-grad-reading.jpg" alt="Vladana Perlić reading from Isus među dojkama in the KC Grad courtyard, Belgrade, 30 June 2021" width="952" height="656" loading="lazy"></a>
+                                </div>
+                                <p class="residency-caption">Cover painting by Milena Ivić. Reading at KC Grad, Belgrade, 30 June 2021.</p>
                                 <div class="card-actions" aria-label="Isus među dojkama links">
                                     <a class="button" href="https://lombooks.com/shop/nekategorizovano/4060/" target="_blank" rel="noopener noreferrer"><i data-lucide="shopping-bag" aria-hidden="true"></i>Buy from LOM</a>
                                     <a class="button" href="https://www.goodreads.com/book/show/55945708-isus-me-u-dojkama" target="_blank" rel="noopener noreferrer"><i data-lucide="star" aria-hidden="true"></i>Goodreads</a>
@@ -2237,15 +2048,96 @@
                     </div>
 
                     <div class="archive-subsection">
+                        <div class="subsection-heading">
+                            <p class="eyebrow">Anthologies, journals, and residencies</p>
+                            <h3>In print abroad and on residency</h3>
+                            <p>My poems have been translated into eight languages: English, French, German, Italian, Polish, Hungarian, Ukrainian, and Hindi.</p>
+                        </div>
+                        <div class="book-grid">
+                            <article class="book-card" data-note="Ten poems in Ukrainian, alongside fourteen Croatian and Bosnian-Herzegovinian poets." data-stamp="anthology">
+                                <span class="tag translation">Anthology / 2026</span>
+                                <h3><em>Сонце у воді</em> (<em>Sun in the Water</em>)</h3>
+                                <p>Anthology of contemporary Croatian and Bosnian-Herzegovinian poetry, edited by Siniša Matasović. Piramida, Lviv, 2026. Includes ten of my poems in Ukrainian translation.</p>
+                                <div class="card-gallery">
+                                    <a href="data/images/publications/sunce-u-vodi-cover.jpg" data-lightbox><img src="data/images/publications/sunce-u-vodi-cover.jpg" alt="Cover of the anthology Сонце у воді (Sun in the Water)" loading="lazy"></a>
+                                    <a href="data/images/photos/2026-lviv-bookforum.jpg" data-lightbox><img src="data/images/photos/2026-lviv-bookforum.jpg" alt="The anthology presentation at the Pivden Cultural Hub, Lviv BookForum 2026" loading="lazy"></a>
+                                </div>
+                                <div class="card-actions">
+                                    <a class="button" href="#news"><i data-lucide="newspaper" aria-hidden="true"></i>Read the news</a>
+                                </div>
+                            </article>
+                            <article class="book-card" data-note="Published in France: four poems translated in the Translab Sarajevo–Paris workshop." data-stamp="france">
+                                <span class="tag translation">Online magazine / France / 2023</span>
+                                <h3><em>Le Courrier des Balkans</em>, July 2023</h3>
+                                <a class="card-photo" href="data/images/photos/courrier-des-balkans-reading.jpg" data-lightbox><img src="data/images/photos/courrier-des-balkans-reading.jpg" alt="Vladana Perlić reading her poetry into a microphone in front of orange and blue velvet curtains" width="1200" height="944" loading="lazy"></a>
+                                <p><em>L’amante et autres poèmes de Vladana Perlić</em>: four poems in French translation, published on 24 July 2023 by the Translab Sarajevo–Paris translation workshop. Translations by Nikolina Oljača (<em>L’Amante</em>), Tamara Radovanović (<em>Vénus Anadyomène</em>), Svetlana Dojić (<em>Haruhi Suzumiya et les bougies enchantées</em>), and Kristina Krkić (<em>Si tu vas insulter ma mère, daigne au moins qu’elle tire avantage</em>), supervised by Chloé Billon.</p>
+                                <div class="card-actions">
+                                    <a class="button" href="https://www.courrierdesbalkans.fr/blog-o-l-amante-et-autres-poemes-de-vladana-perlic-85751/" target="_blank" rel="noopener noreferrer"><i data-lucide="external-link" aria-hidden="true"></i>Read on Le Courrier des Balkans</a>
+                                </div>
+                            </article>
+                            <article class="book-card" data-note="A residency in Vienna: time, space, and a new city to write in." data-stamp="residency">
+                                <span class="tag poetry">Residency / 2022</span>
+                                <h3>Q21 artist residency</h3>
+                                <p>Writer-in-residence at Q21, MuseumsQuartier Wien, Vienna, July–August 2022, working on a poetry book about a generation raised in a post-war, patriarchal society. During the residency I gave a reading at combinat, translated and moderated by Maša Dabić.</p>
+                                <div class="residency-gallery">
+                                    <a href="data/images/photos/2022-q21-vienna-1.jpg" data-lightbox><img src="data/images/photos/2022-q21-vienna-1.jpg" alt="Vladana Perlić holding her book Isus među dojkama in Vienna" width="1400" height="1867" loading="lazy"></a>
+                                    <a href="data/images/photos/2022-q21-vienna-2.jpg" data-lightbox><img src="data/images/photos/2022-q21-vienna-2.jpg" alt="Vladana Perlić reading from her book to an audience at combinat, Vienna" width="1197" height="1600" loading="lazy"></a>
+                                    <a href="data/images/photos/2022-q21-vienna-3.jpg" data-lightbox><img src="data/images/photos/2022-q21-vienna-3.jpg" alt="Audience at Vladana Perlić's reading at combinat, Vienna" width="1080" height="809" loading="lazy"></a>
+                                </div>
+                                <p class="residency-caption">Reading at combinat, Vienna, August 2022. Third photo: Q21 / MuseumsQuartier Wien.</p>
+                                <div class="card-actions">
+                                    <a class="button" href="https://www.mqw.at/en/artists-in-residence/vladana-perlic/" target="_blank" rel="noopener noreferrer"><i data-lucide="external-link" aria-hidden="true"></i>MuseumsQuartier profile</a>
+                                </div>
+                            </article>
+                            <article class="book-card" data-note="Published in Poland: first Polish translations of five young women poets from the Balkans." data-stamp="poland">
+                                <span class="tag translation">Magazine / Poland / 2022</span>
+                                <h3><em>Odra</em>, March 2022</h3>
+                                <img class="journal-cover" src="data/images/publications/odra-2022.jpg" alt="Opening page of the Ósmy Arkusz Odry feature Chciałam urodzić się gdzieś daleko in Odra, March 2022" width="898" height="1200" loading="lazy" data-lightbox tabindex="0" role="button">
+                                <p>Poems in Polish translation by Aleksandra Wojtaszek in the monthly <em>Odra</em>, in the “Ósmy Arkusz Odry” feature <em>Chciałam urodzić się gdzieś daleko</em> (<em>I Wanted to Be Born Somewhere Far Away</em>). It presented the first Polish translations of five young women poets from Croatia, Serbia, Montenegro, and Bosnia and Herzegovina: Monika Herceg, Tihana Gambiraža (Sonja Adamov), Vladana Perlić, Radmila Petrović, and Barbara Delać.</p>
+                            </article>
+                            <article class="book-card" data-note="Published in Austria, in a Graz journal for literature, art, and critique." data-stamp="austria">
+                                <span class="tag translation">Journal / Austria / 2020</span>
+                                <h3><em>Lichtungen</em> 164/2020</h3>
+                                <img class="journal-cover" src="data/images/publications/lichtungen-164.jpg" alt="Cover of Lichtungen issue 164, 2020, themed K/Eine Utopie(n) mehr?" width="768" height="1087" loading="lazy" data-lightbox tabindex="0" role="button">
+                                <p>Poems published in issue 164 of <em>Lichtungen</em>, the Graz-based journal for literature, art, and critique, themed <em>K/Eine Utopie(n) mehr?</em></p>
+                                <div class="card-actions">
+                                    <a class="button" href="https://lichtungen.at/autoren/vladana-perlic/" target="_blank" rel="noopener noreferrer"><i data-lucide="external-link" aria-hidden="true"></i>Lichtungen author page</a>
+                                    <a class="button" href="https://lichtungen.at/ausgaben/164-41-jg/" target="_blank" rel="noopener noreferrer"><i data-lucide="book-open" aria-hidden="true"></i>Issue 164</a>
+                                </div>
+                            </article>
+                            <article class="book-card" data-note="Published in India, in the Hindi literary annual of India Today." data-stamp="india">
+                                <span class="tag translation">Literary annual / India / 2019–20</span>
+                                <h3><em>India Today</em> Sahitya Varshiki 2019–20</h3>
+                                <img class="journal-cover" src="data/images/publications/india-today-2019-20.jpg" alt="Cover of the India Today Hindi literary annual 2019–20, मौलिकता की खोज" width="800" height="1095" loading="lazy" data-lightbox tabindex="0" role="button">
+                                <p>Hindi translation of “Nestvarne djevojčice” (<em>Unreal Girls</em>), published as अवास्तविक लड़कियां in the collector’s edition of <em>India Today</em>’s Hindi literary annual, themed “मौलिकता की खोज” (<em>In Search of Originality</em>), with an illustration by Seeraj Saxena.</p>
+                                <div class="card-actions">
+                                    <a class="button" href="#poem-reader" data-open-poem="data/poems/hindi/unreal-girls-india-today.jpg"><i data-lucide="book-open" aria-hidden="true"></i>Read the poem in Hindi</a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="archive-subsection">
                         <div class="subsection-heading subsection-heading-with-note">
                             <div class="subsection-heading-copy">
                                 <p class="eyebrow">Prizes and honors</p>
-                                <h3>🏆 18 Awards at Literary Competitions</h3>
+                                <h3>🏆 15 Literary Awards and 3 Finalist Places</h3>
                                 <p>As a kid, I was taught it's not nice to boast, so I'll let the awards do the talking.</p>
                             </div>
                             <aside class="sticker-note" aria-label="Playful note about the awards section">
                                 <p>Oh, no! I think my pride is showing again</p>
                             </aside>
+                        </div>
+
+                        <div class="award-photos">
+                            <figure class="award-photo">
+                                <a href="data/images/photos/2020-novica-tadic-award.jpg" data-lightbox><img src="data/images/photos/2020-novica-tadic-award.jpg" alt="Vladana Perlić receiving the Novica Tadić Award plaque from Vladan Vukosavljević, Serbia's Minister of Culture and Information" loading="lazy"></a>
+                                <figcaption>Receiving the “Novica Tadić” Award from Vladan Vukosavljević, Serbia’s Minister of Culture and Information, at the Ministry in Belgrade, 18 September 2020.</figcaption>
+                            </figure>
+                            <figure class="award-photo">
+                                <a href="data/images/photos/2021-anka-topic-award.jpg" data-lightbox><img src="data/images/photos/2021-anka-topic-award.jpg" alt="Vladana Perlić holding the framed Anka Topić Award certificate from HKD Napredak Vitez–Žepče" width="600" height="355" loading="lazy"></a>
+                                <figcaption>Receiving the “Anka Topić” Award from HKD Napredak Vitez–Žepče, June 2021.</figcaption>
+                            </figure>
                         </div>
 
                         <article class="note-card prize-card single-card wide" data-note="Awards are not the work, but they do leave useful breadcrumbs for new readers." data-stamp="prizes">
@@ -2255,6 +2147,7 @@
                                     <div class="prize-highlight"><strong>“Ratković Poetry Evenings”</strong><span>2020 / first prize</span></div>
                                     <div class="prize-highlight"><strong>“Ulaznica 2021”</strong><span>2021 / first prize in poetry</span></div>
                                     <div class="prize-highlight"><strong>“Anka Topić”</strong><span>2021 / first poetry book</span></div>
+                                    <div class="prize-highlight"><strong>“Aladin Lukač”</strong><span>2021 / young poets of the region</span></div>
                                     <div class="prize-highlight"><strong>“Milo Bošković”</strong><span>2020 and 2023</span></div>
                                     <div class="prize-highlight"><strong>“Mak Dizdar”</strong><span>2018 and 2020</span></div>
                                 </div>
@@ -2270,9 +2163,9 @@
                                             <li><time>2021</time><div>Second prize in the “Stories from the Neighborhood” competition for the short story <em>Lovac mekog srca</em>.<small>Mondo portal, Bosnia and Herzegovina.</small></div></li>
                                             <li><time>2021</time><div><strong>“Anka Topić” Award</strong> for a first poetry book by a woman poet from Bosnia and Herzegovina, published within the previous six years, for <em>Kucanje na vrata kule</em>.<small>HKD Napredak, Vitez - Žepče, Bosnia and Herzegovina.</small></div></li>
                                             <li><time>2021</time><div>Jury award in the “Branko’s Praise of the World” competition for the poem <em>Pohvala vatri</em>.<small>Niš Cultural Center, Serbia.</small></div></li>
-                                            <li><time>2020</time><div><strong>“Novica Tadić” Award</strong> for the manuscript <em>Kucanje na vrata kule</em>.<small>Center for the Study of Cultural Development, Belgrade, Serbia.</small></div></li>
+                                            <li><time>2020</time><div><strong>“Novica Tadić” Award</strong> for the manuscript <em>Dolce vita</em> (published as <em>Kucanje na vrata kule</em>).<small>Center for the Study of Cultural Development, Belgrade, Serbia.</small></div></li>
                                             <li><time>2020</time><div><strong>First prize, “Ratković Poetry Evenings”</strong>.<small>Bijelo Polje, Montenegro.</small></div></li>
-                                            <li><time>2020</time><div><strong>Second prize, “Mak Dizdar”</strong>.<small>Slovo Gorčina Festival, Stolac, Bosnia and Herzegovina. Also awarded in 2018.</small></div></li>
+                                            <li><time>2020</time><div><strong>Second prize, “Mak Dizdar”</strong>.<small>Slovo Gorčina Festival, Stolac, Bosnia and Herzegovina.</small></div></li>
                                             <li><time>2020</time><div>Third prize at the Youth Poetry Festival in Vrbas.<small>Vrbas, Serbia.</small></div></li>
                                             <li><time>2020</time><div>Third prize, “Milo Bošković”, for the poem <em>Radije bih da znam popravljati česme</em>.<small>Kolašin, Montenegro.</small></div></li>
                                             <li><time>2020</time><div>Finalist in the Treći Trg competition for a first poetry book.<small>Belgrade, Serbia.</small></div></li>
@@ -2291,7 +2184,7 @@
                         <div class="mini-heading">
                             <p class="eyebrow">Poem archive</p>
                             <h3>Prize-Winning Poems and Translations</h3>
-                            <p>Read the Serbian originals and selected English, French, German, and Polish translations.</p>
+                            <p>Read the Serbian originals alongside translations into English, French, German, Polish, Hindi, and Hungarian.</p>
                         </div>
 
                         <div class="awarded-poem-layout">
@@ -2310,8 +2203,8 @@
                                     <h3>No One Dares Touch Me Anymore / Niko me više ne smije taknuti</h3>
                                     <p class="poem-meta">Ninth competition of the Solin City Library.</p>
                                     <div class="poem-language-options" role="group" aria-label="Available languages for Niko me više ne smije taknuti">
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_english/awarded_poems/No One Dares Touch Me Anymore.txt" data-poem-title="No One Dares Touch Me Anymore" data-poem-meta="English translation. Third prize, Ninth competition of the Solin City Library, 2025."><i data-lucide="languages" aria-hidden="true"></i>English</button>
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_serbian/Niko me više ne smije taknuti.txt" data-poem-title="Niko me više ne smije taknuti" data-poem-meta="Serbian original. Third prize, Ninth competition of the Solin City Library, 2025."><i data-lucide="book-open" aria-hidden="true"></i>Serbian</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/english/No One Dares Touch Me Anymore.txt" data-poem-title="No One Dares Touch Me Anymore" data-poem-meta="English translation. Third prize, Ninth competition of the Solin City Library, 2025."><i data-lucide="languages" aria-hidden="true"></i>English</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/serbian/Niko me više ne smije taknuti.txt" data-poem-title="Niko me više ne smije taknuti" data-poem-meta="Serbian original. Third prize, Ninth competition of the Solin City Library, 2025."><i data-lucide="book-open" aria-hidden="true"></i>Serbian</button>
                                     </div>
                                 </article>
 
@@ -2320,8 +2213,8 @@
                                     <h3>Résidence Le Rabot</h3>
                                     <p class="poem-meta">“Milo Bošković”, Kolašin, Montenegro.</p>
                                     <div class="poem-language-options" role="group" aria-label="Available languages for Résidence Le Rabot">
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_english/awarded_poems/Residence Le Rabot.txt" data-poem-title="Residence Le Rabot" data-poem-meta="English translation. Second prize, “Milo Bošković”, Kolašin, Montenegro, 2023."><i data-lucide="languages" aria-hidden="true"></i>English</button>
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_serbian/Résidence Le Rabot.txt" data-poem-title="Résidence Le Rabot" data-poem-meta="Serbian original. Second prize, “Milo Bošković”, Kolašin, Montenegro, 2023."><i data-lucide="book-open" aria-hidden="true"></i>Serbian</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/english/Residence Le Rabot.txt" data-poem-title="Residence Le Rabot" data-poem-meta="English translation. Second prize, “Milo Bošković”, Kolašin, Montenegro, 2023."><i data-lucide="languages" aria-hidden="true"></i>English</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/serbian/Résidence Le Rabot.txt" data-poem-title="Résidence Le Rabot" data-poem-meta="Serbian original. Second prize, “Milo Bošković”, Kolašin, Montenegro, 2023."><i data-lucide="book-open" aria-hidden="true"></i>Serbian</button>
                                     </div>
                                 </article>
 
@@ -2330,9 +2223,9 @@
                                     <h3>A Love Letter to the Town That Isn't Calling Back / Ljubavno pismo gradu koji se više ne javlja</h3>
                                     <p class="poem-meta">MArteLive Europe Festival, Rome, Italy.</p>
                                     <div class="poem-language-options" role="group" aria-label="Available languages for Ljubavno pismo gradu koji se više ne javlja">
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_english/poezija i proza na engleskom/A Love Letter to the Town That Isn't Calling Back.docx" data-poem-title="A Love Letter to the Town That Isn't Calling Back" data-poem-meta="English translation. Finalist at the MArteLive Europe Festival, Rome, Italy, 2022."><i data-lucide="languages" aria-hidden="true"></i>English</button>
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_serbian/LJUBAVNO PISMO GRADU KOJI SE VIŠE NE JAVLJA.txt" data-poem-title="Ljubavno pismo gradu koji se više ne javlja" data-poem-meta="Serbian original. Finalist at the MArteLive Europe Festival, Rome, Italy, 2022."><i data-lucide="book-open" aria-hidden="true"></i>Serbian</button>
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_german/LIEBESBRIEF AN DIE STADT DIE SICH NICHT MEHR MELDET.docx" data-poem-title="Liebesbrief an die Stadt, die sich nicht mehr meldet" data-poem-meta="German translation by Maša Dabić. Finalist at the MArteLive Europe Festival, Rome, Italy, 2022."><i data-lucide="languages" aria-hidden="true"></i>German</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/english/A Love Letter to the Town That Isn't Calling Back.docx" data-poem-title="A Love Letter to the Town That Isn't Calling Back" data-poem-meta="English translation. Finalist at the MArteLive Europe Festival, Rome, Italy, 2022."><i data-lucide="languages" aria-hidden="true"></i>English</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/serbian/LJUBAVNO PISMO GRADU KOJI SE VIŠE NE JAVLJA.txt" data-poem-title="Ljubavno pismo gradu koji se više ne javlja" data-poem-meta="Serbian original. Finalist at the MArteLive Europe Festival, Rome, Italy, 2022."><i data-lucide="book-open" aria-hidden="true"></i>Serbian</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/german/LIEBESBRIEF AN DIE STADT DIE SICH NICHT MEHR MELDET.docx" data-poem-title="Liebesbrief an die Stadt, die sich nicht mehr meldet" data-poem-meta="German translation by Maša Dabić. Finalist at the MArteLive Europe Festival, Rome, Italy, 2022."><i data-lucide="languages" aria-hidden="true"></i>German</button>
                                     </div>
                                 </article>
 
@@ -2341,8 +2234,8 @@
                                     <h3>Everyone I Meet Looks at Me With Pity and Says What a Shame / Koga god sretnem gleda me sažaljivo i kaže šteta</h3>
                                     <p class="poem-meta">“Ulaznica 2021”, Zrenjanin, Serbia.</p>
                                     <div class="poem-language-options" role="group" aria-label="Available languages for Koga god sretnem gleda me sažaljivo i kaže šteta">
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_english/awarded_poems/Everyone I Meet Looks at Me With Pity and Says What a Shame.txt" data-poem-title="Everyone I Meet Looks at Me With Pity and Says What a Shame" data-poem-meta="English translation. First prize, “Ulaznica 2021”, poetry category, Zrenjanin, Serbia."><i data-lucide="languages" aria-hidden="true"></i>English</button>
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_serbian/Koga god sretnem gleda me sažaljivo.txt" data-poem-title="Koga god sretnem gleda me sažaljivo i kaže šteta" data-poem-meta="Serbian original. First prize, “Ulaznica 2021”, poetry category, Zrenjanin, Serbia."><i data-lucide="book-open" aria-hidden="true"></i>Serbian</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/english/Everyone I Meet Looks at Me With Pity and Says What a Shame.txt" data-poem-title="Everyone I Meet Looks at Me With Pity and Says What a Shame" data-poem-meta="English translation. First prize, “Ulaznica 2021”, poetry category, Zrenjanin, Serbia."><i data-lucide="languages" aria-hidden="true"></i>English</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/serbian/Koga god sretnem gleda me sažaljivo.txt" data-poem-title="Koga god sretnem gleda me sažaljivo i kaže šteta" data-poem-meta="Serbian original. First prize, “Ulaznica 2021”, poetry category, Zrenjanin, Serbia."><i data-lucide="book-open" aria-hidden="true"></i>Serbian</button>
                                     </div>
                                 </article>
 
@@ -2351,8 +2244,8 @@
                                     <h3>Praise of Fire / Pohvala vatri</h3>
                                     <p class="poem-meta">“Branko’s Praise of the World”, Niš Cultural Center.</p>
                                     <div class="poem-language-options" role="group" aria-label="Available languages for Pohvala vatri">
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_english/awarded_poems/Praise of Fire.txt" data-poem-title="Praise of Fire" data-poem-meta="English translation. Jury award in the “Branko’s Praise of the World” competition, Niš Cultural Center, Serbia, 2021."><i data-lucide="languages" aria-hidden="true"></i>English</button>
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_serbian/Pohvala vatri.txt" data-poem-title="Pohvala vatri" data-poem-meta="Serbian original. Jury award in the “Branko’s Praise of the World” competition, Niš Cultural Center, Serbia, 2021."><i data-lucide="book-open" aria-hidden="true"></i>Serbian</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/english/Praise of Fire.txt" data-poem-title="Praise of Fire" data-poem-meta="English translation. Jury award in the “Branko’s Praise of the World” competition, Niš Cultural Center, Serbia, 2021."><i data-lucide="languages" aria-hidden="true"></i>English</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/serbian/Pohvala vatri.txt" data-poem-title="Pohvala vatri" data-poem-meta="Serbian original. Jury award in the “Branko’s Praise of the World” competition, Niš Cultural Center, Serbia, 2021."><i data-lucide="book-open" aria-hidden="true"></i>Serbian</button>
                                     </div>
                                 </article>
 
@@ -2361,20 +2254,20 @@
                                     <h3>I Would Rather Know How to Fix Faucets / Radije bih da znam popravljati česme</h3>
                                     <p class="poem-meta">“Milo Bošković”, Kolašin, Montenegro.</p>
                                     <div class="poem-language-options" role="group" aria-label="Available languages for Radije bih da znam popravljati česme">
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_english/awarded_poems/I Would Rather Know How to Fix Faucets.txt" data-poem-title="I Would Rather Know How to Fix Faucets" data-poem-meta="English translation. Third prize, “Milo Bošković”, Kolašin, Montenegro, 2020."><i data-lucide="languages" aria-hidden="true"></i>English</button>
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_serbian/RADIJE BIH DA ZNAM POPRAVLJATI ČESME.txt" data-poem-title="Radije bih da znam popravljati česme" data-poem-meta="Serbian original. Third prize, “Milo Bošković”, Kolašin, Montenegro, 2020."><i data-lucide="book-open" aria-hidden="true"></i>Serbian</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/english/I Would Rather Know How to Fix Faucets.txt" data-poem-title="I Would Rather Know How to Fix Faucets" data-poem-meta="English translation. Third prize, “Milo Bošković”, Kolašin, Montenegro, 2020."><i data-lucide="languages" aria-hidden="true"></i>English</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/serbian/RADIJE BIH DA ZNAM POPRAVLJATI ČESME.txt" data-poem-title="Radije bih da znam popravljati česme" data-poem-meta="Serbian original. Third prize, “Milo Bošković”, Kolašin, Montenegro, 2020."><i data-lucide="book-open" aria-hidden="true"></i>Serbian</button>
                                     </div>
                                 </article>
 
-                                <article class="note-card poem-card" data-note="The 2019 winning poem from Time (Without) Utopia, preserved here in Cyrillic." data-stamp="2019">
+                                <article class="note-card poem-card" data-note="The 2019 winning poem from Time (Without) Utopia, now read in four languages." data-stamp="2019">
                                     <span class="tag poetry">2019 / winner</span>
                                     <h3>Life Before Us / Život prije nas</h3>
                                     <p class="poem-meta">“Time (Without) Utopia”, Young Writers Network.</p>
                                     <div class="poem-language-options" role="group" aria-label="Available languages for Život prije nas">
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_english/poezija i proza na engleskom/Life Before Us.docx" data-poem-title="Life Before Us" data-poem-meta="English translation. Winner of the “Time (Without) Utopia” competition in the poetry category, 2019."><i data-lucide="languages" aria-hidden="true"></i>English</button>
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_serbian/Život prije nas.txt" data-poem-title="Život prije nas" data-poem-meta="Serbian original. Winner of the “Time (Without) Utopia” competition in the poetry category, 2019."><i data-lucide="book-open" aria-hidden="true"></i>Serbian</button>
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_french/Poezija na francuskom/La-vie-avant-nous-1.docx" data-poem-title="La vie avant nous" data-poem-meta="French translation. Winner of the “Time (Without) Utopia” competition in the poetry category, 2019."><i data-lucide="languages" aria-hidden="true"></i>French</button>
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_polish/poezija na poljskom/Życie-przed-nami.docx" data-poem-title="Życie przed nami" data-poem-meta="Polish translation. Winner of the “Time (Without) Utopia” competition in the poetry category, 2019."><i data-lucide="languages" aria-hidden="true"></i>Polish</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/english/Life Before Us.docx" data-poem-title="Life Before Us" data-poem-meta="English translation. Winner of the “Time (Without) Utopia” competition in the poetry category, 2019."><i data-lucide="languages" aria-hidden="true"></i>English</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/serbian/Život prije nas.txt" data-poem-title="Život prije nas" data-poem-meta="Serbian original. Winner of the “Time (Without) Utopia” competition in the poetry category, 2019."><i data-lucide="book-open" aria-hidden="true"></i>Serbian</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/french/La-vie-avant-nous-1.docx" data-poem-title="La vie avant nous" data-poem-meta="French translation. Winner of the “Time (Without) Utopia” competition in the poetry category, 2019."><i data-lucide="languages" aria-hidden="true"></i>French</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/polish/Życie-przed-nami.docx" data-poem-title="Życie przed nami" data-poem-meta="Polish translation. Winner of the “Time (Without) Utopia” competition in the poetry category, 2019."><i data-lucide="languages" aria-hidden="true"></i>Polish</button>
                                     </div>
                                 </article>
 
@@ -2396,9 +2289,9 @@
                                     <span class="tag translation">English translations</span>
                                     <h3><span class="flag-mark" aria-hidden="true">🇬🇧</span>English</h3>
                                     <div class="poem-button-list language-poem-list is-collapsed" id="english-translations">
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_english/poezija i proza na engleskom/My Parents.docx" data-poem-title="My Parents" data-poem-meta="English translation."><i data-lucide="languages" aria-hidden="true"></i>My Parents</button>
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_english/poezija i proza na engleskom/The Year When My Brother Started Believing in Aliens.docx" data-poem-title="The Year When My Brother Started Believing in Aliens" data-poem-meta="English translation."><i data-lucide="languages" aria-hidden="true"></i>The Year When My Brother Started Believing in Aliens</button>
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_english/poezija i proza na engleskom/Unreal Girls.docx" data-poem-title="Unreal Girls" data-poem-meta="English translation."><i data-lucide="languages" aria-hidden="true"></i>Unreal Girls</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/english/My Parents.docx" data-poem-title="My Parents" data-poem-meta="English translation."><i data-lucide="languages" aria-hidden="true"></i>My Parents</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/english/The Year When My Brother Started Believing in Aliens.docx" data-poem-title="The Year When My Brother Started Believing in Aliens" data-poem-meta="English translation."><i data-lucide="languages" aria-hidden="true"></i>The Year When My Brother Started Believing in Aliens</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/english/Unreal Girls.docx" data-poem-title="Unreal Girls" data-poem-meta="English translation."><i data-lucide="languages" aria-hidden="true"></i>Unreal Girls</button>
                                     </div>
                                 </article>
 
@@ -2406,13 +2299,13 @@
                                     <span class="tag translation">French translations</span>
                                     <h3><span class="flag-mark" aria-hidden="true">🇫🇷</span>French</h3>
                                     <div class="poem-button-list language-poem-list is-collapsed" id="french-translations">
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_french/Poezija na francuskom/L'Amante.docx" data-poem-title="L'Amante" data-poem-meta="French translation."><i data-lucide="languages" aria-hidden="true"></i>L'Amante</button>
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_french/Poezija na francuskom/La poétesse que vous attendiez depuis toujours.docx" data-poem-title="La poétesse que vous attendiez depuis toujours" data-poem-meta="French translation."><i data-lucide="languages" aria-hidden="true"></i>La poétesse que vous attendiez depuis toujours</button>
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_french/Poezija na francuskom/La-vie-avant-nous-1.docx" data-poem-title="La vie avant nous" data-poem-meta="French translation."><i data-lucide="languages" aria-hidden="true"></i>La vie avant nous</button>
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_french/Poezija na francuskom/Les fillettes irréelles.docx" data-poem-title="Les fillettes irréelles" data-poem-meta="French translation."><i data-lucide="languages" aria-hidden="true"></i>Les fillettes irréelles</button>
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_french/Poezija na francuskom/Mes-parents.docx" data-poem-title="Mes parents" data-poem-meta="French translation."><i data-lucide="languages" aria-hidden="true"></i>Mes parents</button>
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_french/Poezija na francuskom/Puisque tu veux niquer ma mère, fais au moins en sorte qu’elle en profite.docx" data-poem-title="Puisque tu veux niquer ma mère, fais au moins en sorte qu’elle en profite" data-poem-meta="French translation."><i data-lucide="languages" aria-hidden="true"></i>Puisque tu veux niquer ma mère, fais au moins en sorte qu’elle en profite</button>
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_french/Poezija na francuskom/SI NOUS ABANDONNONS NOTRE MAISON.docx" data-poem-title="Si nous abandonnons notre maison" data-poem-meta="French translation."><i data-lucide="languages" aria-hidden="true"></i>Si nous abandonnons notre maison</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/french/L'Amante.docx" data-poem-title="L'Amante" data-poem-meta="French translation."><i data-lucide="languages" aria-hidden="true"></i>L'Amante</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/french/La poétesse que vous attendiez depuis toujours.docx" data-poem-title="La poétesse que vous attendiez depuis toujours" data-poem-meta="French translation."><i data-lucide="languages" aria-hidden="true"></i>La poétesse que vous attendiez depuis toujours</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/french/La-vie-avant-nous-1.docx" data-poem-title="La vie avant nous" data-poem-meta="French translation."><i data-lucide="languages" aria-hidden="true"></i>La vie avant nous</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/french/Les fillettes irréelles.docx" data-poem-title="Les fillettes irréelles" data-poem-meta="French translation."><i data-lucide="languages" aria-hidden="true"></i>Les fillettes irréelles</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/french/Mes-parents.docx" data-poem-title="Mes parents" data-poem-meta="French translation."><i data-lucide="languages" aria-hidden="true"></i>Mes parents</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/french/Puisque tu veux niquer ma mère, fais au moins en sorte qu’elle en profite.docx" data-poem-title="Puisque tu veux niquer ma mère, fais au moins en sorte qu’elle en profite" data-poem-meta="French translation."><i data-lucide="languages" aria-hidden="true"></i>Puisque tu veux niquer ma mère, fais au moins en sorte qu’elle en profite</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/french/SI NOUS ABANDONNONS NOTRE MAISON.docx" data-poem-title="Si nous abandonnons notre maison" data-poem-meta="French translation."><i data-lucide="languages" aria-hidden="true"></i>Si nous abandonnons notre maison</button>
                                         <button class="button compact-toggle" type="button" aria-expanded="false" aria-controls="french-translations" data-compact-toggle data-compact-target="french-translations" data-collapsed-label="See more French translations" data-expanded-label="Show fewer French translations"><i data-lucide="chevron-down" aria-hidden="true"></i><span data-compact-label>See more French translations</span></button>
                                     </div>
                                 </article>
@@ -2421,14 +2314,14 @@
                                     <span class="tag translation">German translations</span>
                                     <h3><span class="flag-mark" aria-hidden="true">🇩🇪</span>German</h3>
                                     <div class="poem-button-list language-poem-list is-collapsed" id="german-translations">
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_german/Meine Eltern - prevod Marija Mirković.docx" data-poem-title="Meine Eltern" data-poem-meta="German translation by Marija Mirković."><i data-lucide="languages" aria-hidden="true"></i>Meine Eltern</button>
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_german/DIE DICHTERIN AUF DIE IHR IMMER SCHON GEWARTET HABT.docx" data-poem-title="Die Dichterin, auf die ihr immer schon gewartet habt" data-poem-meta="German translation by Maša Dabić."><i data-lucide="languages" aria-hidden="true"></i>Die Dichterin, auf die ihr immer schon gewartet habt</button>
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_german/LIEBESBRIEF AN DIE STADT DIE SICH NICHT MEHR MELDET.docx" data-poem-title="Liebesbrief an die Stadt, die sich nicht mehr meldet" data-poem-meta="German translation by Maša Dabić."><i data-lucide="languages" aria-hidden="true"></i>Liebesbrief an die Stadt, die sich nicht mehr meldet</button>
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_german/WILLST DU MEINE MUTTER FICKEN SOLL SIE ES ZUMINDEST GENIESSEN.docx" data-poem-title="Willst du meine Mutter ficken, soll sie es zumindest genießen" data-poem-meta="German translation by Maša Dabić."><i data-lucide="languages" aria-hidden="true"></i>Willst du meine Mutter ficken, soll sie es zumindest genießen</button>
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_german/WIE MARILYN.docx" data-poem-title="Wie Marilyn" data-poem-meta="German translation by Maša Dabić."><i data-lucide="languages" aria-hidden="true"></i>Wie Marilyn</button>
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_german/DER MANN DESSEN NAMEN IHR MIR GABT VERLOR BUCHSTÄBLICH DEN KOPF.docx" data-poem-title="Der Mann, dessen Namen ihr mir gabt, verlor buchstäblich den Kopf" data-poem-meta="German translation by Maša Dabić."><i data-lucide="languages" aria-hidden="true"></i>Der Mann, dessen Namen ihr mir gabt, verlor buchstäblich den Kopf</button>
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_german/ICH BRAUCHE KEINE FANS, ICH WILL SEELENVERWANDTE.docx" data-poem-title="Ich brauche keine Fans, ich will Seelenverwandte" data-poem-meta="German translation by Maša Dabić."><i data-lucide="languages" aria-hidden="true"></i>Ich brauche keine Fans, ich will Seelenverwandte</button>
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_german/ER HÄTTE GERNE DASS ICH IHN EIN WENIG STILLE.docx" data-poem-title="Er hätte gerne, dass ich ihn ein wenig stille" data-poem-meta="German translation by Maša Dabić."><i data-lucide="languages" aria-hidden="true"></i>Er hätte gerne, dass ich ihn ein wenig stille</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/german/Meine Eltern - prevod Marija Mirković.docx" data-poem-title="Meine Eltern" data-poem-meta="German translation by Marija Mirković."><i data-lucide="languages" aria-hidden="true"></i>Meine Eltern</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/german/DIE DICHTERIN AUF DIE IHR IMMER SCHON GEWARTET HABT.docx" data-poem-title="Die Dichterin, auf die ihr immer schon gewartet habt" data-poem-meta="German translation by Maša Dabić."><i data-lucide="languages" aria-hidden="true"></i>Die Dichterin, auf die ihr immer schon gewartet habt</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/german/LIEBESBRIEF AN DIE STADT DIE SICH NICHT MEHR MELDET.docx" data-poem-title="Liebesbrief an die Stadt, die sich nicht mehr meldet" data-poem-meta="German translation by Maša Dabić."><i data-lucide="languages" aria-hidden="true"></i>Liebesbrief an die Stadt, die sich nicht mehr meldet</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/german/WILLST DU MEINE MUTTER FICKEN SOLL SIE ES ZUMINDEST GENIESSEN.docx" data-poem-title="Willst du meine Mutter ficken, soll sie es zumindest genießen" data-poem-meta="German translation by Maša Dabić."><i data-lucide="languages" aria-hidden="true"></i>Willst du meine Mutter ficken, soll sie es zumindest genießen</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/german/WIE MARILYN.docx" data-poem-title="Wie Marilyn" data-poem-meta="German translation by Maša Dabić."><i data-lucide="languages" aria-hidden="true"></i>Wie Marilyn</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/german/DER MANN DESSEN NAMEN IHR MIR GABT VERLOR BUCHSTÄBLICH DEN KOPF.docx" data-poem-title="Der Mann, dessen Namen ihr mir gabt, verlor buchstäblich den Kopf" data-poem-meta="German translation by Maša Dabić."><i data-lucide="languages" aria-hidden="true"></i>Der Mann, dessen Namen ihr mir gabt, verlor buchstäblich den Kopf</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/german/ICH BRAUCHE KEINE FANS, ICH WILL SEELENVERWANDTE.docx" data-poem-title="Ich brauche keine Fans, ich will Seelenverwandte" data-poem-meta="German translation by Maša Dabić."><i data-lucide="languages" aria-hidden="true"></i>Ich brauche keine Fans, ich will Seelenverwandte</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/german/ER HÄTTE GERNE DASS ICH IHN EIN WENIG STILLE.docx" data-poem-title="Er hätte gerne, dass ich ihn ein wenig stille" data-poem-meta="German translation by Maša Dabić."><i data-lucide="languages" aria-hidden="true"></i>Er hätte gerne, dass ich ihn ein wenig stille</button>
                                         <button class="button compact-toggle" type="button" aria-expanded="false" aria-controls="german-translations" data-compact-toggle data-compact-target="german-translations" data-collapsed-label="See more German translations" data-expanded-label="Show fewer German translations"><i data-lucide="chevron-down" aria-hidden="true"></i><span data-compact-label>See more German translations</span></button>
                                     </div>
                                 </article>
@@ -2437,8 +2330,25 @@
                                     <span class="tag translation">Polish translations</span>
                                     <h3><span class="flag-mark" aria-hidden="true">🇵🇱</span>Polish</h3>
                                     <div class="poem-button-list">
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_polish/poezija na poljskom/MOI RODZICE.docx" data-poem-title="Moi rodzice" data-poem-meta="Polish translation."><i data-lucide="languages" aria-hidden="true"></i>Moi rodzice</button>
-                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/poems_polish/poezija na poljskom/Życie-przed-nami.docx" data-poem-title="Życie przed nami" data-poem-meta="Polish translation."><i data-lucide="languages" aria-hidden="true"></i>Życie przed nami</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/polish/MOI RODZICE.docx" data-poem-title="Moi rodzice" data-poem-meta="Polish translation."><i data-lucide="languages" aria-hidden="true"></i>Moi rodzice</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/polish/Życie-przed-nami.docx" data-poem-title="Życie przed nami" data-poem-meta="Polish translation."><i data-lucide="languages" aria-hidden="true"></i>Życie przed nami</button>
+                                    </div>
+                                </article>
+
+                                <article class="note-card poem-card translation-card" data-note="The Hindi translation was published with an illustration and is shown as the printed page." data-stamp="hindi">
+                                    <span class="tag translation">Hindi translation</span>
+                                    <h3><span class="flag-mark" aria-hidden="true">🇮🇳</span>Hindi</h3>
+                                    <div class="poem-button-list">
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/hindi/unreal-girls-india-today.jpg" data-poem-title="अवास्तविक लड़कियां" data-poem-meta="Hindi translation of “Unreal Girls”, published in India Today’s Hindi literary annual (Sahitya Varshiki), 2019–20. Illustration by Seeraj Saxena."><i data-lucide="languages" aria-hidden="true"></i>अवास्तविक लड़कियां</button>
+                                    </div>
+                                </article>
+
+                                <article class="note-card poem-card translation-card" data-note="Hungarian translations by Fehér Illés, published in the Magyarul Bábelben literary anthology." data-stamp="hungarian">
+                                    <span class="tag translation">Hungarian translations</span>
+                                    <h3><span class="flag-mark" aria-hidden="true">🇭🇺</span>Hungarian</h3>
+                                    <div class="poem-button-list">
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/hungarian/A kékszemű szfinxről és az ólomkatonáról.txt" data-poem-title="A kékszemű szfinxről és az ólomkatonáról" data-poem-meta="Hungarian translation by Fehér Illés of" data-poem-source-title="O plavookim sfingama i olovnim vojnicima" data-poem-source-url="https://www.magyarulbabelben.net/works/sr/Perli%C4%87%2C_Vladana_-1995/O_plavookim_sfingama_i_olovnim_vojnicima"><i data-lucide="languages" aria-hidden="true"></i>A kékszemű szfinxről és az ólomkatonáról</button>
+                                        <button class="button poem-button" type="button" aria-controls="poem-reader-text" data-poem-src="data/poems/hungarian/Szerető.txt" data-poem-title="Szerető" data-poem-meta="Hungarian translation by Fehér Illés of" data-poem-source-title="Ljubavnica" data-poem-source-url="https://www.magyarulbabelben.net/works/sr/Perli%C4%87%2C_Vladana_-1995/Ljubavnica"><i data-lucide="languages" aria-hidden="true"></i>Szerető</button>
                                     </div>
                                 </article>
 
@@ -2535,7 +2445,7 @@
 
                         <article class="press-card" data-note="Academic readers have written about the books too, especially in relation to contemporary poetry." data-stamp="papers">
                             <span class="tag poetry">Citations and criticism</span>
-                            <h3>Research papers citing my books</h3>
+                            <h3>Academic papers on my poetry</h3>
                             <ul class="link-list">
                                 <li><a href="https://www.researchgate.net/profile/Sara-Matin-3/publication/362570625_Vladana_Perlic_i_Radmila_Petrovic_studija_ukrstenog_citanja/links/677ec63d7934b95644aafca3/Vladana-Perlic-i-Radmila-Petrovic-studija-ukrstenog-citanja.pdf" target="_blank" rel="noopener noreferrer">Vladana Perlić i Radmila Petrović: studija ukrštenog čitanja</a><small>ResearchGate PDF.</small></li>
                                 <li><a href="http://dirikum.org.rs/1226/1/Katarina%20Pantovi%C4%87%20O%20nekim%20aspektima%20mlade%20srpske%20poezije.pdf" target="_blank" rel="noopener noreferrer">Katarina Pantović: O nekim aspektima mlade srpske poezije</a><small>PDF.</small></li>
@@ -2586,10 +2496,11 @@
                             </ul>
                                     </article>
 
-                                    <article class="press-card" data-note="News items are breadcrumbs: they mark arrivals, prizes, readings, and public moments." data-stamp="news">
-                            <span class="tag press">News</span>
+                                    <article class="press-card" id="in-the-news" data-note="News items are breadcrumbs: they mark arrivals, prizes, readings, and public moments." data-stamp="news">
+                            <span class="tag press">In the news</span>
                             <ul class="link-list">
                                 <li><a href="https://www.seecult.org/vladani-perlic-nagrada-novica-tadic/" target="_blank" rel="noopener noreferrer">Vladani Perlić nagrada Novica Tadić</a><small>SEEcult.</small></li>
+                                <li><a href="https://nova.rs/kultura/marija-dragnic-i-vladana-perlic-sa-citaocima-u-kc-gradu/" target="_blank" rel="noopener noreferrer">Marija Dragnić i Vladana Perlić sa čitaocima u KC Gradu</a><small>Nova.rs, 23 June 2021.</small></li>
                                 <li><a href="https://mondo.ba/Magazin/Kultura/a992571/Rafalna-paljba-stihova-u-Banskom-dvoru-FOTO.html" target="_blank" rel="noopener noreferrer">“Rafalna paljba” stihova u Banskom dvoru</a><small>Mondo.ba.</small></li>
                             </ul>
                                     </article>
@@ -2600,47 +2511,86 @@
                 </div>
             </section>
 
-            <section class="section" id="popular-science" aria-labelledby="popular-science-title">
+            <section class="section" id="beta-readers" aria-labelledby="beta-readers-title">
                 <div class="section-inner">
-                    <div class="section-heading">
+                    <div class="section-heading simple-heading">
                         <div>
-                            <p class="eyebrow">Popular science</p>
-                            <h2 id="popular-science-title">What AI Does, What It Doesn’t Do, and Why Your Aunt Keeps Using It as a Therapist</h2>
+                            <p class="eyebrow">Beta readers wanted</p>
+                            <h2 id="beta-readers-title">Read my newest work before anyone else does.</h2>
                         </div>
-                        <p class="section-copy">A working popular-science book on AI misconceptions: clear enough for non-specialists, grounded enough for technical readers, and funny enough to survive several appearances of the words “large language model.”</p>
                     </div>
+                    <p class="section-copy">I am looking for beta readers for my newest, unpublished writing. I write in Serbian, but I would gladly translate the pieces into English or French in exchange for your honest opinion: what works, what doesn't, and where you stopped caring.</p>
+                    <p class="section-copy">No literary credentials needed, just curiosity and the willingness to tell me the truth, politely or otherwise.</p>
+                    <div class="cv-actions">
+                        <a class="button primary" href="#contact"><i data-lucide="book-open-check" aria-hidden="true"></i>I want to read</a>
+                    </div>
+                </div>
+            </section>
 
-                    <div class="publisher-callout" data-note="The fastest route for publishers: one short pitch, then the manuscript excerpt if the premise bites." data-stamp="publishers">
+            <section class="section" id="bio" aria-labelledby="bio-title">
+                <div class="section-inner">
+                    <div class="section-heading simple-heading">
                         <div>
-                            <span>Publishers, over here</span>
-                            <strong>Read the pitch first. The manuscript is longer, funnier, and has receipts.</strong>
-                            <p>A quick publisher-facing note on the premise, audience, tone, and why this AI book refuses to treat autocomplete like a minor deity.</p>
+                            <p class="eyebrow">Author bio</p>
+                            <h2 id="bio-title">Short author bio, ready to paste into festival programmes, anthologies, and journals.</h2>
                         </div>
-                        <button class="button primary science-button" type="button" aria-controls="science-reader-text" data-science-src="data/popular_science/publisher_pitch.md" data-science-title="Are you a publisher?" data-science-meta="Publisher pitch"><i data-lucide="send" aria-hidden="true"></i>Read pitch</button>
                     </div>
-
-                    <div class="science-layout">
-                        <div class="science-stack" aria-label="Popular science documents">
-                            <article class="chapter-card science-card" data-note="A public-facing manuscript sample: jokes, examples, and enough technical grounding to keep the fog away." data-stamp="book">
-                                <span class="tag public-science">Manuscript sample</span>
-                                <h3><em>Don’t Introduce Me to Your Mother</em></h3>
-                                <p>A draft excerpt from <em>Don’t Introduce Me to Your Mother</em>: a book about AI hype, useful machinery, broken metaphors, expensive mistakes, and why your chatbot does not need to meet your parents.</p>
-                                <div class="card-actions">
-                                    <button class="button science-button" type="button" aria-controls="science-reader-text" data-science-src="data/popular_science/ai_book_overleaf/main.tex" data-science-format="latex"><i data-lucide="book-open" aria-hidden="true"></i>Read manuscript</button>
-                                </div>
-                            </article>
-                            <p class="manuscript-rumor">NYT, watch out: a new manuscript is on the loose and is eyeing your bestseller list</p>
-                        </div>
-
-                        <aside class="science-reader" id="science-reader" aria-live="polite">
-                            <span class="tag public-science">Popular science reader</span>
-                            <h3 id="science-reader-title">Loading popular science text</h3>
-                            <p class="science-reader-meta" id="science-reader-meta">AI book project.</p>
-                            <div class="science-text" id="science-reader-text">Loading popular science text...</div>
-                            <div class="science-reader-actions">
-                                <button class="button" type="button" aria-expanded="false" data-reader-toggle data-reader-target="science-reader" data-expanded-label="Exit wide reader" data-collapsed-label="Wide reader"><i data-lucide="maximize-2" aria-hidden="true"></i><span data-reader-label>Wide reader</span></button>
+                    <p class="section-copy">This bio covers my literary work only. For research, see the <a href="data/cv/vladana-perlic-scholar-cv.pdf" target="_blank" rel="noopener noreferrer">Scholar CV</a>.</p>
+                    <div class="note-grid">
+                        <article class="note-card" lang="sr-Latn" data-stamp="srpski">
+                            <span class="tag poetry">Srpski</span>
+                            <div class="bio-text" id="bio-text-sr">
+                                <p>Vladana Perlić objavila je dvije zbirke poezije: „Kucanje na vrata kule“ (Zaprokul, 2020) i „Isus među dojkama“ (LOM, 2020).</p>
+                                <p>Dobitnica je Q21 umjetničke rezidencije u Beču za 2022, kao i brojnih nagrada, od kojih su najznačajnije: „Novica Tadić“ (2020), „Aladin Lukač“ (2021), „Anka Topić“ (2021), „Ratkovićeve večeri poezije“ (2020), „Ulaznica 2021“, „Mak Dizdar“ (2018. i 2020), „Milo Bošković“ (2020. i 2023) i „Natječaj Gradske knjižnice Solin“ (2025).</p>
+                                <p>Zastupljena je u Antologiji suvremene hrvatske i bosanskohercegovačke poezije „Sunce u vodi“ (ukr. «Сонце у воді»), 2026.</p>
+                                <p>Pjesme su joj prevedene na engleski, francuski, njemački, italijanski, poljski, mađarski, ukrajinski i hindi.</p>
+                                <p>Živi i radi u Francuskoj.</p>
                             </div>
-                        </aside>
+                            <div class="bio-actions">
+                                <button class="button" type="button" data-copy-target="bio-text-sr" data-copy-status="bio-status-sr" data-copied-label="Kopirano."><i data-lucide="copy" aria-hidden="true"></i>Kopiraj</button>
+                                <p class="small-note" id="bio-status-sr" aria-live="polite"></p>
+                            </div>
+                        </article>
+                        <article class="note-card" lang="en" data-stamp="english">
+                            <span class="tag translation">English</span>
+                            <div class="bio-text" id="bio-text-en">
+                                <p>Vladana Perlić has published two poetry collections: <em>Knocking on the Tower Door</em> (<em>Kucanje na vrata kule</em>, Zaprokul, 2020) and <em>Jesus Among Breasts</em> (<em>Isus među dojkama</em>, LOM, 2020).</p>
+                                <p>She was awarded the 2022 Q21 artist residency in Vienna and has received numerous prizes, most notably the “Novica Tadić” Award (2020), the “Aladin Lukač” Award (2021), the “Anka Topić” Award (2021), the “Ratković Poetry Evenings” Award (2020), “Ulaznica 2021”, the “Mak Dizdar” Award (2018 and 2020), the “Milo Bošković” Award (2020 and 2023), and the Solin City Library Poetry Competition (2025).</p>
+                                <p>Her work appears in <em>Sun in the Water</em> (Ukrainian: «Сонце у воді»), an anthology of contemporary Croatian and Bosnian-Herzegovinian poetry (2026).</p>
+                                <p>Her poems have been translated into English, French, German, Italian, Polish, Hungarian, Ukrainian, and Hindi.</p>
+                                <p>She lives and works in France.</p>
+                            </div>
+                            <div class="bio-actions">
+                                <button class="button" type="button" data-copy-target="bio-text-en" data-copy-status="bio-status-en" data-copied-label="Copied."><i data-lucide="copy" aria-hidden="true"></i>Copy</button>
+                                <p class="small-note" id="bio-status-en" aria-live="polite"></p>
+                            </div>
+                        </article>
+                    </div>
+                    <article class="note-card press-photo-card" data-stamp="photo">
+                        <img src="data/site/press-photo.jpg" alt="Press photo of Vladana Perlić" width="700" height="933" loading="lazy" data-lightbox tabindex="0" role="button">
+                        <div>
+                            <span class="tag poetry">Press photo</span>
+                            <p>Portrait (700 × 933 px) for festival programmes, posters, and articles.</p>
+                            <div class="card-actions">
+                                <a class="button" href="data/site/press-photo.jpg" download="Vladana-Perlic-press-photo.jpg"><i data-lucide="download" aria-hidden="true"></i>Download photo</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section" id="cvs" aria-labelledby="cvs-title">
+                <div class="section-inner">
+                    <div class="section-heading simple-heading">
+                        <div>
+                            <p class="eyebrow">CVs</p>
+                            <h2 id="cvs-title">Two CVs, two lives: the researcher and the writer.</h2>
+                        </div>
+                    </div>
+                    <p class="section-copy">Pick whichever version fits. Both open as PDFs in a new tab.</p>
+                    <div class="cv-actions">
+                        <a class="button primary" href="data/cv/vladana-perlic-scholar-cv.pdf" target="_blank" rel="noopener noreferrer"><i data-lucide="graduation-cap" aria-hidden="true"></i>Scholar CV</a>
+                        <a class="button" href="data/cv/vladana-perlic-author-cv.pdf" target="_blank" rel="noopener noreferrer"><i data-lucide="feather" aria-hidden="true"></i>Author CV</a>
                     </div>
                 </div>
             </section>
@@ -2650,7 +2600,7 @@
                     <div>
                         <p class="eyebrow">Contact</p>
                         <h2 id="contact-title">For research, readings, interviews, translation, and publishing conversations.</h2>
-                        <p class="section-copy">Reach out about AI research collaborations, popular science work, poetry events, interviews, or the AI misconceptions manuscript.</p>
+                        <p class="section-copy">Reach out about AI research collaborations, poetry events, interviews, translation work, or beta reading my newest writing.</p>
                         <div class="contact-actions">
                             <button class="button primary" type="button" data-email-reveal><i data-lucide="mail" aria-hidden="true"></i>Reveal email</button>
                             <a class="button" href="https://www.linkedin.com/in/vladana-perlic/" rel="me noopener noreferrer" target="_blank"><i data-lucide="linkedin" aria-hidden="true"></i>LinkedIn</a>
@@ -2682,14 +2632,19 @@
         <footer class="site-footer">
             <div class="footer-inner">
                 <span>© <span id="year"></span> Vladana Perlić</span>
-                <span>Based in France / writing across English, Serbian, and French</span>
+                <span>Based in France / writing in Serbian</span>
             </div>
         </footer>
     </div>
 
+    <dialog class="lightbox" id="lightbox" aria-label="Enlarged image">
+        <button class="lightbox-close" type="button" aria-label="Close image"><i data-lucide="x" aria-hidden="true"></i></button>
+        <img id="lightbox-img" src="data:," alt="">
+        <p class="lightbox-caption" id="lightbox-caption"></p>
+    </dialog>
+
     <script>
         const protectedEmailCodes = [118, 108, 97, 100, 97, 110, 97, 46, 112, 101, 114, 108, 105, 99, 64, 116, 101, 108, 101, 99, 111, 109, 45, 112, 97, 114, 105, 115, 46, 102, 114];
-        const floatingManuscriptDismissedKey = "floatingManuscriptDismissed";
         let revealedEmail = "";
 
         function getProtectedEmail() {
@@ -2763,452 +2718,12 @@
             return parsed.body.innerHTML.trim() || html;
         }
 
-        function formatMarkdown(text) {
-            if (window.marked) {
-                window.marked.setOptions({ breaks: true });
-                return window.marked.parse(text);
-            }
-
-            return formatPoemText(text).replace(/\n{2,}/g, "</p><p>").replace(/^/, "<p>").replace(/$/, "</p>");
-        }
-
-        function escapeHtml(value) {
-            return String(value ?? "")
-                .replace(/&/g, "&amp;")
-                .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;")
-                .replace(/"/g, "&quot;");
-        }
-
-        function escapeAttribute(value) {
-            return escapeHtml(value).replace(/'/g, "&#39;");
-        }
-
-        function isEscaped(source, characterIndex) {
-            let slashCount = 0;
-            let cursorIndex = characterIndex - 1;
-            while (cursorIndex >= 0 && source[cursorIndex] === "\\") {
-                slashCount += 1;
-                cursorIndex -= 1;
-            }
-            return slashCount % 2 === 1;
-        }
-
-        function findMatchingBrace(source, openingBraceIndex) {
-            let depth = 0;
-            for (let characterIndex = openingBraceIndex; characterIndex < source.length; characterIndex += 1) {
-                const character = source[characterIndex];
-                if (isEscaped(source, characterIndex)) {
-                    continue;
-                }
-                if (character === "{") {
-                    depth += 1;
-                } else if (character === "}") {
-                    depth -= 1;
-                    if (depth === 0) {
-                        return characterIndex;
-                    }
-                }
-            }
-            return -1;
-        }
-
-        function stripLatexComments(source) {
-            return source.split(/\r?\n/).map((line) => {
-                for (let characterIndex = 0; characterIndex < line.length; characterIndex += 1) {
-                    if (line[characterIndex] === "%" && !isEscaped(line, characterIndex)) {
-                        return line.slice(0, characterIndex).trimEnd();
-                    }
-                }
-                return line.trimEnd();
-            }).join("\n");
-        }
-
-        function extractLatexCommandGroup(source, commandName) {
-            const marker = `\\${commandName}{`;
-            const markerIndex = source.indexOf(marker);
-            if (markerIndex === -1) {
-                return "";
-            }
-            const openingBraceIndex = markerIndex + marker.length - 1;
-            const closingBraceIndex = findMatchingBrace(source, openingBraceIndex);
-            return closingBraceIndex === -1 ? "" : source.slice(openingBraceIndex + 1, closingBraceIndex);
-        }
-
-        function latexTextToPlainText(value) {
-            const accentMap = {
-                '"': { a: "ä", A: "Ä", e: "ë", E: "Ë", i: "ï", I: "Ï", o: "ö", O: "Ö", u: "ü", U: "Ü", y: "ÿ", Y: "Ÿ" },
-                "'": { a: "á", A: "Á", e: "é", E: "É", i: "í", I: "Í", o: "ó", O: "Ó", u: "ú", U: "Ú", y: "ý", Y: "Ý", c: "ć", C: "Ć" },
-                "`": { a: "à", A: "À", e: "è", E: "È", i: "ì", I: "Ì", o: "ò", O: "Ò", u: "ù", U: "Ù" },
-                "^": { a: "â", A: "Â", e: "ê", E: "Ê", i: "î", I: "Î", o: "ô", O: "Ô", u: "û", U: "Û" },
-                "~": { a: "ã", A: "Ã", n: "ñ", N: "Ñ", o: "õ", O: "Õ" }
-            };
-            let text = String(value ?? "");
-            text = text
-                .replace(/\\(["'`^~])\{?([A-Za-z])\}?/g, (match, accent, letter) => accentMap[accent]?.[letter] || letter)
-                .replace(/\\c\{?([cC])\}?/g, (match, letter) => letter === "C" ? "Ç" : "ç")
-                .replace(/\\%/g, "%")
-                .replace(/\\\$/g, "$")
-                .replace(/\\&/g, "&")
-                .replace(/\\_/g, "_")
-                .replace(/\\#/g, "#")
-                .replace(/\\\{/g, "{")
-                .replace(/\\\}/g, "}")
-                .replace(/~/g, " ")
-                .replace(/\\\\/g, "\n");
-
-            let previousText = "";
-            while (previousText !== text) {
-                previousText = text;
-                text = text.replace(/\\[a-zA-Z]+(?:\[[^\]]*\])?\{([^{}]*)\}/g, "$1");
-            }
-
-            return text
-                .replace(/\\[a-zA-Z]+(?:\[[^\]]*\])?/g, "")
-                .replace(/[{}]/g, "")
-                .replace(/[ \t]{2,}/g, " ")
-                .trim();
-        }
-
-        function referenceIdForKey(key) {
-            return `latex-ref-${key.replace(/[^a-z0-9_-]/gi, "-")}`;
-        }
-
-        function splitBibAuthors(authorText) {
-            return latexTextToPlainText(authorText)
-                .split(/\s+and\s+/i)
-                .map((author) => author.replace(/\s+/g, " ").trim())
-                .filter(Boolean);
-        }
-
-        function getBibFamilyName(author) {
-            if (author.includes(",")) {
-                return author.split(",")[0].trim();
-            }
-            const authorParts = author.split(" ").filter(Boolean);
-            return authorParts[authorParts.length - 1] || author;
-        }
-
-        function formatCitationLabel(entry, key) {
-            if (!entry) {
-                return key;
-            }
-            const authors = splitBibAuthors(entry.author || entry.editor || "").map(getBibFamilyName);
-            const year = latexTextToPlainText(entry.year || "n.d.");
-            if (authors.length === 0) {
-                return `${latexTextToPlainText(entry.title || key)} ${year}`;
-            }
-            if (authors.length === 1) {
-                return `${authors[0]} ${year}`;
-            }
-            if (authors.length === 2) {
-                return `${authors[0]} & ${authors[1]} ${year}`;
-            }
-            return `${authors[0]} et al. ${year}`;
-        }
-
-        function formatReferenceAuthors(authorText) {
-            return splitBibAuthors(authorText).join("; ");
-        }
-
-        function formatReferenceSummary(entry) {
-            if (!entry) {
-                return "Reference unavailable.";
-            }
-            const authors = formatReferenceAuthors(entry.author || entry.editor || "");
-            const year = latexTextToPlainText(entry.year || "n.d.");
-            const title = latexTextToPlainText(entry.title || entry.key);
-            return [authors, `(${year}).`, title].filter(Boolean).join(" ");
-        }
-
-        function renderLatexCitation(keys, bibEntries) {
-            const citations = keys.split(",")
-                .map((key) => key.trim())
-                .filter(Boolean)
-                .map((key) => {
-                    const entry = bibEntries[key];
-                    const label = formatCitationLabel(entry, key);
-                    const title = formatReferenceSummary(entry);
-                    return `<a href="#${referenceIdForKey(key)}" title="${escapeAttribute(title)}">${escapeHtml(label)}</a>`;
-                });
-            return `<span class="latex-citation">(${citations.join("; ")})</span>`;
-        }
-
-        function renderLatexInline(source, bibEntries) {
-            const tokens = [];
-            const stashToken = (html) => {
-                const token = `@@LATEX_HTML_${tokens.length}@@`;
-                tokens.push(html);
-                return token;
-            };
-
-            let text = String(source ?? "");
-            text = text.replace(/\\emph\{([^{}]*)\}/g, (match, content) => stashToken(`<em>${renderLatexInline(content, bibEntries)}</em>`));
-            text = text.replace(/\\parencite\{([^{}]+)\}/g, (match, keys) => stashToken(renderLatexCitation(keys, bibEntries)));
-            text = latexTextToPlainText(text).replace(/\s*\n\s*/g, " ");
-
-            let html = escapeHtml(text)
-                .replace(/``/g, "&ldquo;")
-                .replace(/''/g, "&rdquo;")
-                .replace(/---/g, "&mdash;")
-                .replace(/--/g, "&ndash;");
-
-            html = html.replace(/@@LATEX_HTML_(\d+)@@/g, (match, tokenIndex) => tokens[Number(tokenIndex)] || "");
-            return html;
-        }
-
-        function renderLatexParagraphs(source, bibEntries) {
-            return source
-                .replace(/\\(frontmatter|mainmatter|backmatter|clearpage|tableofcontents|maketitle)\b/g, "")
-                .split(/\n\s*\n+/)
-                .map((paragraph) => paragraph.replace(/\s*\n\s*/g, " ").trim())
-                .filter(Boolean)
-                .map((paragraph) => `<p>${renderLatexInline(paragraph, bibEntries)}</p>`)
-                .join("");
-        }
-
-        function renderLatexQuote(source, bibEntries) {
-            const quoteParts = source.trim().replace(/^\\itshape\s*/, "").split(/\\normalfont/);
-            const quoteBody = renderLatexParagraphs(quoteParts[0] || "", bibEntries);
-            const attribution = quoteParts.slice(1).join(" ").trim();
-            const attributionHtml = attribution ? `<p class="latex-quote-attribution">${renderLatexInline(attribution, bibEntries)}</p>` : "";
-            return `<blockquote class="latex-quote">${quoteBody}${attributionHtml}</blockquote>`;
-        }
-
-        function renderLatexBlocks(source, bibEntries) {
-            const output = [];
-            const blockPattern = /\\begin\{quote\}([\s\S]*?)\\end\{quote\}|\\\[([\s\S]*?)\\\]/g;
-            let cursorIndex = 0;
-            let match = blockPattern.exec(source);
-            while (match) {
-                output.push(renderLatexParagraphs(source.slice(cursorIndex, match.index), bibEntries));
-                if (match[1] !== undefined) {
-                    output.push(renderLatexQuote(match[1], bibEntries));
-                } else {
-                    output.push(`<div class="latex-equation">\\[${escapeHtml(match[2].trim())}\\]</div>`);
-                }
-                cursorIndex = match.index + match[0].length;
-                match = blockPattern.exec(source);
-            }
-            output.push(renderLatexParagraphs(source.slice(cursorIndex), bibEntries));
-            return output.join("");
-        }
-
-        function splitLatexChapters(source) {
-            const chapters = [];
-            const marker = "\\chapter{";
-            let searchIndex = 0;
-            let chapterIndex = source.indexOf(marker, searchIndex);
-            while (chapterIndex !== -1) {
-                const openingBraceIndex = chapterIndex + marker.length - 1;
-                const closingBraceIndex = findMatchingBrace(source, openingBraceIndex);
-                if (closingBraceIndex === -1) {
-                    break;
-                }
-                const nextChapterIndex = source.indexOf(marker, closingBraceIndex + 1);
-                chapters.push({
-                    title: source.slice(openingBraceIndex + 1, closingBraceIndex),
-                    content: source.slice(closingBraceIndex + 1, nextChapterIndex === -1 ? source.length : nextChapterIndex)
-                });
-                searchIndex = closingBraceIndex + 1;
-                chapterIndex = nextChapterIndex;
-            }
-            return chapters;
-        }
-
-        function parseBibValue(source, startIndex) {
-            let cursorIndex = startIndex;
-            while (cursorIndex < source.length && /\s/.test(source[cursorIndex])) {
-                cursorIndex += 1;
-            }
-            if (source[cursorIndex] === "{") {
-                const closingBraceIndex = findMatchingBrace(source, cursorIndex);
-                return {
-                    value: closingBraceIndex === -1 ? source.slice(cursorIndex + 1) : source.slice(cursorIndex + 1, closingBraceIndex),
-                    nextIndex: closingBraceIndex === -1 ? source.length : closingBraceIndex + 1
-                };
-            }
-            if (source[cursorIndex] === '"') {
-                let closingQuoteIndex = cursorIndex + 1;
-                while (closingQuoteIndex < source.length && (source[closingQuoteIndex] !== '"' || isEscaped(source, closingQuoteIndex))) {
-                    closingQuoteIndex += 1;
-                }
-                return {
-                    value: source.slice(cursorIndex + 1, closingQuoteIndex),
-                    nextIndex: Math.min(closingQuoteIndex + 1, source.length)
-                };
-            }
-            const commaIndex = source.indexOf(",", cursorIndex);
-            const endIndex = commaIndex === -1 ? source.length : commaIndex;
-            return { value: source.slice(cursorIndex, endIndex), nextIndex: endIndex };
-        }
-
-        function parseBibFields(source) {
-            const fields = {};
-            let cursorIndex = 0;
-            while (cursorIndex < source.length) {
-                while (cursorIndex < source.length && /[\s,]/.test(source[cursorIndex])) {
-                    cursorIndex += 1;
-                }
-                const fieldMatch = source.slice(cursorIndex).match(/^([a-zA-Z]+)\s*=/);
-                if (!fieldMatch) {
-                    break;
-                }
-                const fieldName = fieldMatch[1].toLowerCase();
-                cursorIndex += fieldMatch[0].length;
-                const parsedValue = parseBibValue(source, cursorIndex);
-                fields[fieldName] = latexTextToPlainText(parsedValue.value).replace(/\s+/g, " ").trim();
-                cursorIndex = parsedValue.nextIndex;
-            }
-            return fields;
-        }
-
-        function parseBibEntries(source) {
-            const entries = {};
-            let cursorIndex = 0;
-            let entryIndex = source.indexOf("@", cursorIndex);
-            while (entryIndex !== -1) {
-                const openingBraceIndex = source.indexOf("{", entryIndex);
-                if (openingBraceIndex === -1) {
-                    break;
-                }
-                const closingBraceIndex = findMatchingBrace(source, openingBraceIndex);
-                if (closingBraceIndex === -1) {
-                    break;
-                }
-                const entryType = source.slice(entryIndex + 1, openingBraceIndex).trim().toLowerCase();
-                const entryBody = source.slice(openingBraceIndex + 1, closingBraceIndex);
-                const keyEndIndex = entryBody.indexOf(",");
-                if (keyEndIndex !== -1) {
-                    const key = entryBody.slice(0, keyEndIndex).trim();
-                    entries[key] = {
-                        key,
-                        type: entryType,
-                        ...parseBibFields(entryBody.slice(keyEndIndex + 1))
-                    };
-                }
-                cursorIndex = closingBraceIndex + 1;
-                entryIndex = source.indexOf("@", cursorIndex);
-            }
-            return entries;
-        }
-
-        function getLatexMainBody(source) {
-            const mainMatterIndex = source.indexOf("\\mainmatter");
-            const bodyStartIndex = mainMatterIndex === -1 ? 0 : mainMatterIndex + "\\mainmatter".length;
-            const backMatterIndex = source.indexOf("\\backmatter", bodyStartIndex);
-            const documentEndIndex = source.indexOf("\\end{document}", bodyStartIndex);
-            const bodyEndIndex = backMatterIndex !== -1 ? backMatterIndex : (documentEndIndex === -1 ? source.length : documentEndIndex);
-            return source.slice(bodyStartIndex, bodyEndIndex);
-        }
-
-        function getCitedKeys(source) {
-            const citedKeys = [];
-            const citationPattern = /\\parencite\{([^{}]+)\}/g;
-            let match = citationPattern.exec(source);
-            while (match) {
-                match[1].split(",").map((key) => key.trim()).filter(Boolean).forEach((key) => {
-                    if (!citedKeys.includes(key)) {
-                        citedKeys.push(key);
-                    }
-                });
-                match = citationPattern.exec(source);
-            }
-            return citedKeys;
-        }
-
-        function renderReference(entry) {
-            const parts = [];
-            const authors = formatReferenceAuthors(entry.author || entry.editor || "");
-            const year = latexTextToPlainText(entry.year || "n.d.");
-            const title = latexTextToPlainText(entry.title || entry.key);
-            const container = latexTextToPlainText(entry.journaltitle || entry.booktitle || entry.publisher || entry.note || "");
-            if (authors) {
-                parts.push(`${escapeHtml(authors)}.`);
-            }
-            parts.push(`(${escapeHtml(year)}).`);
-            parts.push(`<span class="latex-bib-title">${escapeHtml(title)}</span>.`);
-            if (container) {
-                parts.push(`${escapeHtml(container)}.`);
-            }
-            if (entry.volume) {
-                parts.push(escapeHtml(entry.volume));
-            }
-            if (entry.pages) {
-                parts.push(`: ${escapeHtml(entry.pages)}.`);
-            }
-            if (entry.doi) {
-                const doi = entry.doi.replace(/^https?:\/\/(dx\.)?doi\.org\//i, "");
-                parts.push(`<a href="https://doi.org/${escapeAttribute(doi)}" target="_blank" rel="noopener noreferrer">doi:${escapeHtml(doi)}</a>`);
-            } else if (entry.url) {
-                parts.push(`<a href="${escapeAttribute(entry.url)}" target="_blank" rel="noopener noreferrer">source</a>`);
-            }
-            return `<li id="${referenceIdForKey(entry.key)}">${parts.join(" ")}</li>`;
-        }
-
-        function renderLatexBibliography(citedKeys, bibEntries) {
-            const references = citedKeys
-                .map((key) => bibEntries[key])
-                .filter(Boolean)
-                .map(renderReference);
-            if (references.length === 0) {
-                return "";
-            }
-            return `<section class="latex-bibliography" id="latex-bibliography"><h4>Bibliography</h4><ol class="latex-bibliography-list">${references.join("")}</ol></section>`;
-        }
-
-        function renderLatexManuscript(latexSource, bibliographySource) {
-            const cleanSource = stripLatexComments(latexSource);
-            const bibEntries = parseBibEntries(bibliographySource || "");
-            const titleParts = extractLatexCommandGroup(cleanSource, "title").split(/\\\\\s*\\large\s*/);
-            const manuscriptTitle = renderLatexInline(titleParts[0] || "LaTeX manuscript", bibEntries);
-            const manuscriptSubtitle = renderLatexInline(titleParts.slice(1).join(" "), bibEntries);
-            const mainBody = getLatexMainBody(cleanSource);
-            const chapters = splitLatexChapters(mainBody);
-            const citedKeys = getCitedKeys(mainBody);
-            const tocHtml = chapters.map((chapter, chapterIndex) => {
-                const chapterId = `latex-chapter-${chapterIndex + 1}`;
-                return `<li><a href="#${chapterId}">${renderLatexInline(chapter.title, bibEntries)}</a></li>`;
-            }).join("");
-            const chaptersHtml = chapters.map((chapter, chapterIndex) => {
-                const chapterId = `latex-chapter-${chapterIndex + 1}`;
-                return `<section class="latex-chapter" id="${chapterId}"><span class="latex-chapter-kicker">Chapter ${chapterIndex + 1}</span><h4 class="latex-chapter-title">${renderLatexInline(chapter.title, bibEntries)}</h4>${renderLatexBlocks(chapter.content, bibEntries)}</section>`;
-            }).join("");
-
-            return `<article class="latex-manuscript"><header class="latex-title-page"><span>Working manuscript</span><h4>${manuscriptTitle}</h4>${manuscriptSubtitle ? `<p>${manuscriptSubtitle}</p>` : ""}</header>${tocHtml ? `<nav class="latex-toc" aria-label="AI book contents"><strong>Contents</strong><ol>${tocHtml}</ol></nav>` : ""}${chaptersHtml}${renderLatexBibliography(citedKeys, bibEntries)}</article>`;
-        }
-
-        function isLatexScienceSource(button, source) {
-            return button.dataset.scienceFormat === "latex" || source.toLowerCase().endsWith(".tex");
-        }
-
-        function getSiblingSource(source, fileName) {
-            const slashIndex = source.lastIndexOf("/");
-            return `${slashIndex === -1 ? "" : source.slice(0, slashIndex + 1)}${fileName}`;
-        }
-
-        async function loadSiblingText(source, fileName) {
-            const response = await fetch(encodeURI(getSiblingSource(source, fileName)), { cache: "no-store" });
-            return response.ok ? response.text() : "";
-        }
-
-        async function typesetMath(target) {
-            if (!window.MathJax) {
-                return;
-            }
-            try {
-                if (window.MathJax.startup?.promise) {
-                    await window.MathJax.startup.promise;
-                }
-                if (window.MathJax.typesetPromise) {
-                    await window.MathJax.typesetPromise([target]);
-                }
-            } catch (error) {
-                // The manuscript remains readable even if the optional math renderer fails.
-            }
-        }
-
         async function renderPoemSource(response, source, title) {
+            if (/\.(jpe?g|png|gif|webp)$/i.test(source)) {
+                const altText = String(title || "Poem").replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+                return `<figure class="poem-image"><img src="${encodeURI(source)}" alt="${altText}" loading="lazy" data-lightbox tabindex="0" role="button"></figure>`;
+            }
+
             if (source.toLowerCase().endsWith(".docx")) {
                 if (!window.mammoth) {
                     throw new Error("DOCX reader is not available");
@@ -3232,7 +2747,20 @@
             const textTarget = document.getElementById("poem-reader-text");
 
             titleTarget.textContent = title;
-            metaTarget.textContent = meta;
+            const sourceUrl = button.dataset.poemSourceUrl;
+            const sourceTitle = button.dataset.poemSourceTitle;
+            if (sourceUrl && sourceTitle) {
+                metaTarget.textContent = meta ? `${meta} ` : "";
+                const sourceLink = document.createElement("a");
+                sourceLink.href = sourceUrl;
+                sourceLink.target = "_blank";
+                sourceLink.rel = "noopener noreferrer";
+                sourceLink.textContent = `“${sourceTitle}”`;
+                metaTarget.appendChild(sourceLink);
+                metaTarget.appendChild(document.createTextNode("."));
+            } else {
+                metaTarget.textContent = meta;
+            }
             textTarget.textContent = "Loading poem...";
 
             document.querySelectorAll(".poem-card").forEach((card) => card.classList.toggle("is-selected", card.contains(button)));
@@ -3261,88 +2789,6 @@
 
             if (buttons.length > 0) {
                 loadPoem(buttons[0]);
-            }
-        }
-
-        const selectedScienceStorageKey = "selectedScienceSource";
-
-        function getStoredScienceSource() {
-            try {
-                return window.localStorage.getItem(selectedScienceStorageKey);
-            } catch (error) {
-                return null;
-            }
-        }
-
-        function storeScienceSource(source) {
-            try {
-                window.localStorage.setItem(selectedScienceStorageKey, source);
-            } catch (error) {
-                // Ignore storage failures and fall back to default selection.
-            }
-        }
-
-        async function loadScienceText(button, shouldScroll = false) {
-            const title = button.dataset.scienceTitle;
-            const meta = button.dataset.scienceMeta;
-            const source = button.dataset.scienceSrc;
-            const isLatexSource = isLatexScienceSource(button, source);
-            const reader = document.getElementById("science-reader");
-            const titleTarget = document.getElementById("science-reader-title");
-            const metaTarget = document.getElementById("science-reader-meta");
-            const textTarget = document.getElementById("science-reader-text");
-
-            titleTarget.textContent = title;
-            metaTarget.textContent = meta;
-            textTarget.textContent = "Loading text...";
-            reader.classList.toggle("is-latex-mode", isLatexSource);
-            textTarget.classList.toggle("is-latex-reader", isLatexSource);
-            storeScienceSource(source);
-
-            document.querySelectorAll(".science-card").forEach((card) => {
-                const cardButton = card.querySelector(".science-button[data-science-src]");
-                card.classList.toggle("is-selected", card.contains(button) || cardButton?.dataset.scienceSrc === source);
-            });
-            document.querySelectorAll(".science-button").forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
-
-            try {
-                const response = await fetch(encodeURI(source), { cache: "no-store" });
-                if (!response.ok) {
-                    throw new Error(`Could not load ${source}`);
-                }
-                const text = await response.text();
-                if (isLatexSource) {
-                    const bibliographyText = await loadSiblingText(source, "references.bib");
-                    textTarget.innerHTML = renderLatexManuscript(text, bibliographyText);
-                    await typesetMath(textTarget);
-                } else {
-                    textTarget.innerHTML = formatMarkdown(text.trim());
-                }
-                textTarget.scrollTop = 0;
-            } catch (error) {
-                textTarget.textContent = "This text could not be loaded inside the page in this browser.";
-            }
-
-            if (shouldScroll && window.matchMedia("(max-width: 920px)").matches) {
-                reader.scrollIntoView({ behavior: "smooth", block: "start" });
-            }
-        }
-
-        function setupScienceReader() {
-            const buttons = document.querySelectorAll(".science-button[data-science-src]");
-            buttons.forEach((button) => {
-                button.addEventListener("click", () => loadScienceText(button, true));
-            });
-
-            const storedSource = getStoredScienceSource();
-            const storedButton = storedSource
-                ? Array.from(buttons).find((button) => button.dataset.scienceSrc === storedSource)
-                : null;
-            const excerptButton = Array.from(buttons).find((button) => button.dataset.scienceFormat === "latex" || button.dataset.scienceSrc.endsWith(".tex"));
-            const pitchButton = Array.from(buttons).find((button) => button.dataset.scienceSrc.includes("publisher_pitch"));
-            const initialButton = storedButton || pitchButton || excerptButton || buttons[0];
-            if (initialButton) {
-                loadScienceText(initialButton);
             }
         }
 
@@ -3408,7 +2854,7 @@
         }
 
         function setupReaderModes() {
-            const readerSelector = ".poem-reader.is-expanded, .science-reader.is-expanded";
+            const readerSelector = ".poem-reader.is-expanded";
             const refreshIcons = () => {
                 if (window.lucide) {
                     window.lucide.createIcons();
@@ -3454,40 +2900,76 @@
             });
         }
 
-        function isFloatingManuscriptDismissed() {
-            try {
-                return window.sessionStorage.getItem(floatingManuscriptDismissedKey) === "true";
-            } catch (error) {
-                return false;
-            }
-        }
-
-        function dismissFloatingManuscript(card) {
-            card.hidden = true;
-            try {
-                window.sessionStorage.setItem(floatingManuscriptDismissedKey, "true");
-            } catch (error) {
-                // Ignore storage failures; the card still closes for the current page view.
-            }
-        }
-
-        function setupFloatingManuscriptCta() {
-            const card = document.querySelector("[data-floating-manuscript-cta]");
-            const closeButton = document.querySelector("[data-floating-manuscript-close]");
+        function setupBetaCta() {
+            const card = document.querySelector("[data-beta-cta]");
+            const closeButton = document.querySelector("[data-beta-cta-close]");
+            const storageKey = "betaCtaDismissed";
             if (!card || !closeButton) {
                 return;
             }
-
-            if (isFloatingManuscriptDismissed()) {
+            try {
+                if (window.sessionStorage.getItem(storageKey) === "true") {
+                    return;
+                }
+            } catch (error) {
+                // Storage may be blocked; fall through and show the card.
+            }
+            let shown = false;
+            const show = () => {
+                if (shown) {
+                    return;
+                }
+                shown = true;
+                card.hidden = false;
+                window.removeEventListener("scroll", onScroll);
+            };
+            const onScroll = () => {
+                if (window.scrollY > window.innerHeight * 0.8) {
+                    show();
+                }
+            };
+            window.setTimeout(show, 12000);
+            window.addEventListener("scroll", onScroll, { passive: true });
+            closeButton.addEventListener("click", () => {
                 card.hidden = true;
+                try {
+                    window.sessionStorage.setItem(storageKey, "true");
+                } catch (error) {
+                    // Storage may be blocked; the card still closes for this view.
+                }
+            });
+        }
+
+        function setupLightbox() {
+            const dialog = document.getElementById("lightbox");
+            const image = document.getElementById("lightbox-img");
+            const caption = document.getElementById("lightbox-caption");
+            if (!dialog || typeof dialog.showModal !== "function") {
                 return;
             }
-
-            closeButton.addEventListener("click", (event) => {
-                event.preventDefault();
-                event.stopPropagation();
-                dismissFloatingManuscript(card);
+            const open = (trigger) => {
+                const thumb = trigger.tagName === "IMG" ? trigger : trigger.querySelector("img");
+                image.src = trigger.tagName === "A" ? trigger.getAttribute("href") : thumb.currentSrc || thumb.src;
+                image.alt = thumb?.alt || "";
+                caption.textContent = thumb?.alt || "";
+                dialog.showModal();
+            };
+            document.addEventListener("click", (event) => {
+                const trigger = event.target.closest("[data-lightbox]");
+                if (trigger) {
+                    event.preventDefault();
+                    open(trigger);
+                }
             });
+            document.addEventListener("keydown", (event) => {
+                const trigger = event.target.closest?.("img[data-lightbox]");
+                if (trigger && (event.key === "Enter" || event.key === " ")) {
+                    event.preventDefault();
+                    open(trigger);
+                }
+            });
+            // Any click inside the dialog (image, backdrop, or close button) closes it.
+            dialog.addEventListener("click", () => dialog.close());
         }
 
         function setupMarginalia() {
@@ -3513,6 +2995,47 @@
 
         document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("year").textContent = new Date().getFullYear();
+            document.querySelectorAll("[data-copy-target]").forEach((button) => {
+                button.addEventListener("click", async () => {
+                    const source = document.getElementById(button.dataset.copyTarget);
+                    const status = document.getElementById(button.dataset.copyStatus);
+                    const text = Array.from(source.querySelectorAll("p")).map((p) => p.textContent.trim()).join("\n");
+                    try {
+                        await navigator.clipboard.writeText(text);
+                        status.textContent = button.dataset.copiedLabel;
+                    } catch (error) {
+                        window.getSelection().selectAllChildren(source);
+                        status.textContent = "Press Ctrl+C to copy.";
+                    }
+                });
+            });
+            document.querySelectorAll("[data-open-panel]").forEach((link) => {
+                link.addEventListener("click", (event) => {
+                    const target = document.querySelector(link.getAttribute("href"));
+                    if (!target) {
+                        return;
+                    }
+                    event.preventDefault();
+                    const panel = target.closest("[data-progressive-panel]");
+                    if (panel && !panel.classList.contains("is-open")) {
+                        panel.querySelector("[data-reveal-toggle]")?.click();
+                    }
+                    // Wait for the panel's expand transition before scrolling.
+                    window.setTimeout(() => target.scrollIntoView({ behavior: "smooth", block: "start" }), 450);
+                });
+            });
+            document.querySelectorAll("[data-open-poem]").forEach((link) => {
+                link.addEventListener("click", (event) => {
+                    const poemButton = Array.from(document.querySelectorAll(".poem-button[data-poem-src]"))
+                        .find((button) => button.dataset.poemSrc === link.dataset.openPoem);
+                    if (!poemButton) {
+                        return;
+                    }
+                    event.preventDefault();
+                    loadPoem(poemButton);
+                    document.getElementById("poem-reader").scrollIntoView({ behavior: "smooth", block: "start" });
+                });
+            });
             document.querySelectorAll("[data-email-reveal]").forEach((button) => button.addEventListener("click", revealEmail));
             document.getElementById("copy-email").addEventListener("click", async () => {
                 const status = document.getElementById("email-status");
@@ -3525,12 +3048,12 @@
                 }
             });
             setupPoemReader();
-            setupScienceReader();
             setupRevealPanels();
             setupCompactToggles();
             setupReaderModes();
-            setupFloatingManuscriptCta();
             setupMarginalia();
+            setupBetaCta();
+            setupLightbox();
             if (window.lucide) {
                 window.lucide.createIcons();
             }
